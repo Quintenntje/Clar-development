@@ -1,0 +1,26 @@
+.loader-overlay {
+  overflow-x: hidden;
+  z-index: 9999;
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--accent-color);
+
+  .loader-overlay__logo {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+    .loader-overlay__logo__text {
+      position: absolute;
+      bottom: -200px;
+      font-size: var(--font-title-max);
+      font-family: var(--font-serif);
+      color: var(--white-cream);
+      text-align: center;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+  }
+}

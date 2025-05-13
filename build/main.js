@@ -6281,6 +6281,54 @@ function initMouseAnimation() {
 
 /***/ }),
 
+/***/ "./src/scripts/animations/pageLoader.js":
+/*!**********************************************!*\
+  !*** ./src/scripts/animations/pageLoader.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _mouse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mouse.js */ "./src/scripts/animations/mouse.js");
+
+
+var $wrapper = document.querySelector("[data-animation='loader']");
+var $logo = document.querySelector("[data-animation-child='logo']");
+function logoTimeline() {
+  var $logo = document.querySelector("[data-animation-child='logo']");
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
+    delay: 1
+  });
+  tl.to($logo, {
+    y: 0,
+    bottom: 0,
+    ease: "power2.out"
+  }).to($logo, {
+    delay: 0.25,
+    y: -200,
+    ease: "power2.out"
+  });
+  return tl;
+}
+function wrapperTimeline() {
+  var $wrapper = document.querySelector("[data-animation='loader']");
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline();
+  tl.to($wrapper, {
+    xPercent: 100
+  });
+  return tl;
+}
+function initPageLoaderAnimation() {
+  var masterTimeline = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline();
+  masterTimeline.add(logoTimeline($logo)).add(wrapperTimeline($wrapper).add(_mouse_js__WEBPACK_IMPORTED_MODULE_0__.mouseEnterAnimation, "<+.5"));
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initPageLoaderAnimation);
+
+/***/ }),
+
 /***/ "./src/scripts/main.js":
 /*!*****************************!*\
   !*** ./src/scripts/main.js ***!
@@ -6289,9 +6337,12 @@ function initMouseAnimation() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animations_mouse__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations/mouse */ "./src/scripts/animations/mouse.js");
+/* harmony import */ var _animations_pageLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations/pageLoader */ "./src/scripts/animations/pageLoader.js");
+
 
 document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_mouse__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_animations_pageLoader__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 
 /***/ }),
