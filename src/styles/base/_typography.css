@@ -1,0 +1,28 @@
+body {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--font-base);
+  line-height: 1.5;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+}
+
+h1 {
+  font-family: var(--font-serif), serif;
+  font-size: var(--font-title-mobile);
+  line-height: 1;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-title-min);
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: var(--font-title-max);
+  }
+}

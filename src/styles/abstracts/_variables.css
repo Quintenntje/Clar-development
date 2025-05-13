@@ -1,0 +1,90 @@
+:root {
+  /* Colors - Main */
+  --white-cream: #f8f6f1;
+  --black: #1b1b1b;
+  --blue: #082b9d;
+  --green-dark: #0d4135;
+  --green-light: #8acdb8;
+  --orange: #a2543d;
+  --yellow: #f4b63e;
+  --peach: #f7d1ba;
+  --white: #ffffff;
+
+  /* Colors - Transition */
+  --transition-blue: #082b9d;
+  --transition-orange: #a2543d;
+  --transition-peach: #f7d1ba;
+  --transition-brown: #975e1a;
+  --transition-gold: #e7b46c;
+  --transition-olive: #43503f;
+  --transition-sage: #679678;
+  --transition-navy: #44598b;
+  --transition-sky: #8aaeca;
+  --transition-burgundy: #622e3d;
+  --transition-rose: #ce8b9f;
+  --transition-rust: #99451c;
+  --transition-terracotta: #d37e55;
+
+  /* Font sizes */
+  --2xs: 0.1rem;
+  --xs: 0.5rem;
+  --sm: 0.625rem;
+  --list: 0.85rem;
+  --n: 0.875rem;
+  --base: 1rem;
+  --text: 1.25rem;
+  --subtitle: 1.3rem;
+  --md: 1.25rem; 
+  --lg: 2rem;
+  --title-mobile: 2.5rem;
+  --title-min: 4.25rem;
+  --xl: 4rem;
+  --title-max: 7rem;
+  --2xl: 5.625rem;
+  --display-min: 12rem;
+  --display-max: 14.5rem;
+  --5xl: 11rem;
+
+  /* Theme colors */
+  --background-color: var(--white-cream);
+  --foreground-color: var(--black);
+  --muted-color: var(--peach);
+  --accent-color: var(--blue);
+
+  /* Fonts */
+  --font-sans: "Akzidenz-Grotesk BQ";
+  --font-serif: "Canela";
+  --font-serif-light: "Canela Light";
+  --font-serif-light-italic: "Canela Light Italic";
+  --font-serif-regular: "Canela Regular";
+
+  /* Container */
+  --container-width: 84rem;
+
+  /* Spacing */
+  --spacing-mini: var(--2xs);
+  --spacing-xs: var(--xs);
+  --spacing-sm: var(--sm);
+  --spacing-base: var(--md);
+  --spacing-lg: var(--lg);
+  --spacing-xl: var(--xl);
+  --spacing-section: var(--2xl);
+  --spacing-5xl: var(--5xl);
+
+  /* Typography */
+  --font-small: var(--sm);
+  --font-normal: var(--n);
+  --font-base: var(--base);
+  --font-md: var(--md);
+  --font-lg: var(--lg);
+  --font-lead: var(--xl);
+  --font-h1: var(--2xl);
+  --font-list: var(--list);
+  --font-text: var(--text);
+  --font-subtitle: var(--subtitle);
+  --font-title-mobile: var(--title-mobile);
+  --font-title-min: var(--title-min);
+  --font-title-max: var(--title-max);
+  --font-display-min: var(--display-min);
+  --font-display-max: var(--display-max);
+}
