@@ -1,0 +1,8 @@
+.title {
+  display: block;
+  font-size: var(--font-display-max);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-transform: uppercase;
+  color: var(--blue);
+}

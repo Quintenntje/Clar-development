@@ -4,4 +4,5 @@ import initPageLoaderAnimation from "./animations/pageLoader";
 document.addEventListener("DOMContentLoaded", () => {
   initMouseAnimation();
   initPageLoaderAnimation();
+  initTitleStickAnimation();
 });

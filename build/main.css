@@ -281,4 +281,39 @@ h1 {
   }
 }
 
+.title {
+  display: block;
+  font-size: var(--font-display-max);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-transform: uppercase;
+  color: var(--blue);
+}
 
+.header {
+  display: flex;
+  justify-content: right;
+  color: var(--blue);
+  gap: var(--spacing-base);
+  padding: var(--spacing-base);
+
+  & .header__logo {
+    font-size: var(--title-max);
+    font-family: var(--font-serif-light);
+    line-height: 0.8;
+  }
+  & .header__text {
+    margin-top: var(--spacing-base);
+    font-family: var(--font-sans);
+    font-size: var(--font-base);
+    text-transform: uppercase;
+  }
+}
+
+.hero-section{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+main{
+padding-inline: 2rem;
+}

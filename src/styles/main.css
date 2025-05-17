@@ -3,4 +3,13 @@
 @import url("./base/_fonts.css");
 @import url("./base/_typography.css");
 @import url("./components/mouse.css");
-@import url("./layouts/_loader-overlay.css")
+@import url("./layouts/_loader-overlay.css");
+@import url("./components/_title.css");
+@import url("./components/_header.css");
+@import url("./layouts/_hero.css");
+
+
+
+main{
+padding-inline: 2rem;
+}
