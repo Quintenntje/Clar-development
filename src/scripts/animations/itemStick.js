@@ -2,32 +2,33 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function initStickAnimation() {
-  const $container = document.querySelectorAll("[data-animation='title-pin'");
+export default function initTitleStickAnimation() {
+  const $containers = document.querySelectorAll("[data-animation='title-pin'");
 
-  $container.forEach(($el) => {
-    const $title = $el.querySelectorAll("[data-animation-child='title-pin']");
+  $containers.forEach(($container) => {
+    const $title = $container.querySelectorAll(
+      "[data-animation-child='title-pin']"
+    );
 
     $title.forEach(($child) => {
-      stickAnimation($el, $child);
+      stickAnimation($container, $child);
     });
   });
 }
 
-function stickAnimation($el, $child) {
-  const containerHeight = $el.offsetHeight;
+function stickAnimation($container, $child) {
+  const containerHeight = $container.offsetHeight;
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: $el,
+      trigger: $container,
       start: "top top",
-      end: `+=${containerHeight}`,
+      end: "bottom top",
       scrub: true,
-      pin: true,
     },
   });
 
   tl.to($child, {
-    y: containerHeight / 4,
+    y: containerHeight,
   });
 }

@@ -16,3 +16,7 @@ body {
 main {
   padding-inline: 2rem;
 }
+
+.content{
+  height: 100%;
+}

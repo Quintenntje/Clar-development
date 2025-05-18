@@ -9668,6 +9668,42 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 /***/ }),
 
+/***/ "./src/scripts/animations/fadeIn.js":
+/*!******************************************!*\
+  !*** ./src/scripts/animations/fadeIn.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ initFadeInAnimation)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+function initFadeInAnimation() {
+  var $fadeInEl = document.querySelectorAll("[data-animation='fade-in']");
+  $fadeInEl.forEach(function ($el) {
+    var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+      scrollTrigger: {
+        trigger: $el,
+        start: "top 80%",
+        end: "top 30%",
+        toggleActions: "play none none reverse",
+        markers: true
+      }
+    });
+    fadeInTimeline.from($el, {
+      opacity: 0,
+      y: 100
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/scripts/animations/itemStick.js":
 /*!*********************************************!*\
   !*** ./src/scripts/animations/itemStick.js ***!
@@ -9676,35 +9712,34 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ initStickAnimation)
+/* harmony export */   "default": () => (/* binding */ initTitleStickAnimation)
 /* harmony export */ });
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-function initStickAnimation() {
-  var $container = document.querySelectorAll("[data-animation='title-pin'");
-  $container.forEach(function ($el) {
-    var $title = $el.querySelectorAll("[data-animation-child='title-pin']");
+function initTitleStickAnimation() {
+  var $containers = document.querySelectorAll("[data-animation='title-pin'");
+  $containers.forEach(function ($container) {
+    var $title = $container.querySelectorAll("[data-animation-child='title-pin']");
     $title.forEach(function ($child) {
-      stickAnimation($el, $child);
+      stickAnimation($container, $child);
     });
   });
 }
-function stickAnimation($el, $child) {
-  var containerHeight = $el.offsetHeight;
+function stickAnimation($container, $child) {
+  var containerHeight = $container.offsetHeight;
   var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
-      trigger: $el,
+      trigger: $container,
       start: "top top",
-      end: "+=".concat(containerHeight),
-      scrub: true,
-      pin: true
+      end: "bottom top",
+      scrub: true
     }
   });
   tl.to($child, {
-    y: containerHeight / 4
+    y: containerHeight
   });
 }
 
@@ -9855,6 +9890,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animations_pageLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations/pageLoader */ "./src/scripts/animations/pageLoader.js");
 /* harmony import */ var _animations_itemStick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/itemStick */ "./src/scripts/animations/itemStick.js");
 /* harmony import */ var _animations_titleFadeIn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animations/titleFadeIn */ "./src/scripts/animations/titleFadeIn.js");
+/* harmony import */ var _animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/fadeIn */ "./src/scripts/animations/fadeIn.js");
+
 
 
 
@@ -9864,6 +9901,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_pageLoader__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_animations_itemStick__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_animations_titleFadeIn__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 
 /***/ }),
