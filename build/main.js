@@ -9668,6 +9668,48 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 /***/ }),
 
+/***/ "./src/scripts/animations/itemStick.js":
+/*!*********************************************!*\
+  !*** ./src/scripts/animations/itemStick.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ initStickAnimation)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+function initStickAnimation() {
+  var $container = document.querySelectorAll("[data-animation='title-pin'");
+  $container.forEach(function ($el) {
+    var $title = $el.querySelectorAll("[data-animation-child='title-pin']");
+    $title.forEach(function ($child) {
+      stickAnimation($el, $child);
+    });
+  });
+}
+function stickAnimation($el, $child) {
+  var containerHeight = $el.offsetHeight;
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    scrollTrigger: {
+      trigger: $el,
+      start: "top top",
+      end: "+=".concat(containerHeight),
+      scrub: true,
+      pin: true
+    }
+  });
+  tl.to($child, {
+    y: containerHeight / 4
+  });
+}
+
+/***/ }),
+
 /***/ "./src/scripts/animations/mouse.js":
 /*!*****************************************!*\
   !*** ./src/scripts/animations/mouse.js ***!
@@ -9765,49 +9807,6 @@ function initPageLoaderAnimation() {
 
 /***/ }),
 
-/***/ "./src/scripts/animations/titleStick.js":
-/*!**********************************************!*\
-  !*** ./src/scripts/animations/titleStick.js ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ initTitleStickAnimation)
-/* harmony export */ });
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-
-
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-function initTitleStickAnimation() {
-  var $container = document.querySelectorAll("[data-animation='title-pin'");
-  $container.forEach(function ($el) {
-    var $title = $el.querySelectorAll("[data-animation-child='title-pin']");
-    $title.forEach(function ($child) {
-      stickAnimation($el, $child);
-    });
-  });
-}
-function stickAnimation($el, $child) {
-  var containerHeight = $el.offsetHeight;
-  var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-    scrollTrigger: {
-      trigger: $el,
-      start: "top top",
-      end: "+=".concat(containerHeight),
-      scrub: true,
-      pin: true,
-      markers: true
-    }
-  });
-  tl.to($child, {
-    y: containerHeight / 4
-  });
-}
-
-/***/ }),
-
 /***/ "./src/scripts/main.js":
 /*!*****************************!*\
   !*** ./src/scripts/main.js ***!
@@ -9817,14 +9816,14 @@ function stickAnimation($el, $child) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animations_mouse__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations/mouse */ "./src/scripts/animations/mouse.js");
 /* harmony import */ var _animations_pageLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations/pageLoader */ "./src/scripts/animations/pageLoader.js");
-/* harmony import */ var _animations_titleStick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/titleStick */ "./src/scripts/animations/titleStick.js");
+/* harmony import */ var _animations_itemStick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/itemStick */ "./src/scripts/animations/itemStick.js");
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_mouse__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_animations_pageLoader__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  (0,_animations_titleStick__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_animations_itemStick__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
 
 /***/ }),

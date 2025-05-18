@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function initTitleStickAnimation() {
+export default function initStickAnimation() {
   const $container = document.querySelectorAll("[data-animation='title-pin'");
 
   $container.forEach(($el) => {
@@ -24,7 +24,6 @@ function stickAnimation($el, $child) {
       end: `+=${containerHeight}`,
       scrub: true,
       pin: true,
-      markers: true,
     },
   });
 
