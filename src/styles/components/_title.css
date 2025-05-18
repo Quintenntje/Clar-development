@@ -3,7 +3,6 @@
   font-size: var(--font-display-max);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  text-transform: uppercase;
   color: var(--blue);
 }
 
@@ -20,8 +19,7 @@
     width: 100%;
     font-size: var(--font-title-max);
     font-family: var(--font-serif-light);
-    color: var(--accent-color);
-    text-transform: uppercase;
+    color: var(--foreground-color);
     font-weight: 400;
     line-height: 1;
 

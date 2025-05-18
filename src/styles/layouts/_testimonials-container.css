@@ -1,0 +1,10 @@
+.testimonials-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+     padding-inline: var(--spacing-xl);
+
+     .info-card{
+        margin-top: var(--spacing-xl);
+     }
+    
+}

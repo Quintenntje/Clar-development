@@ -9,11 +9,11 @@
     font-size: var(--title-max);
     font-family: var(--font-serif-light);
     line-height: 0.8;
+    text-transform: lowercase;
   }
   & .header__text {
     margin-top: var(--spacing-base);
     font-family: var(--font-sans);
     font-size: var(--font-base);
-    text-transform: uppercase;
   }
 }

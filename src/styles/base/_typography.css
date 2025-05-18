@@ -15,6 +15,10 @@ h1 {
   margin-bottom: 0.5em;
 }
 
+.subtitle{
+  font-size: var(--subtitle);
+}
+
 @media (min-width: 768px) {
   h1 {
     font-size: var(--font-title-min);

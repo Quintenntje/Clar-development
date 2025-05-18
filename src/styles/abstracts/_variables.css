@@ -26,7 +26,6 @@
   --transition-terracotta: #d37e55;
 
   /* Font sizes */
-  --2xs: 0.1rem;
   --xs: 0.5rem;
   --sm: 0.625rem;
   --list: 0.85rem;
@@ -34,7 +33,7 @@
   --base: 1rem;
   --text: 1.25rem;
   --subtitle: 1.3rem;
-  --md: 1.25rem; 
+  --md: 1.25rem;
   --lg: 2rem;
   --title-mobile: 2.5rem;
   --title-min: 4.25rem;
@@ -47,7 +46,7 @@
 
   /* Theme colors */
   --background-color: var(--white-cream);
-  --foreground-color: var(--black);
+  --foreground-color: var(--blue);
   --muted-color: var(--peach);
   --accent-color: var(--blue);
 
@@ -57,9 +56,6 @@
   --font-serif-light: "Canela Light";
   --font-serif-light-italic: "Canela Light Italic";
   --font-serif-regular: "Canela Regular";
-
-  /* Container */
-  --container-width: 84rem;
 
   /* Spacing */
   --spacing-mini: var(--2xs);
