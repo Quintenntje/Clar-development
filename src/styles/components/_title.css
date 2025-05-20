@@ -24,7 +24,6 @@
     width: 100%;
     font-size: var(--font-title-max);
     font-family: var(--font-serif-light);
-    color: var(--foreground-color);
     font-weight: 400;
     line-height: 1;
 
@@ -32,9 +31,5 @@
       flex-direction: row-reverse;
       font-family: var(--font-serif-light-italic);
     }
-  }
-
-  .title-section__text--white {
-    color: var(--white-cream);
   }
 }

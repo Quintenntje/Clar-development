@@ -9781,6 +9781,45 @@ function initFadeInListItemsAnimation() {
 
 /***/ }),
 
+/***/ "./src/scripts/animations/grow.js":
+/*!****************************************!*\
+  !*** ./src/scripts/animations/grow.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ initGrowAnimation)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+function initGrowAnimation() {
+  var $growParent = document.querySelectorAll('[data-animation="grow"]');
+  $growParent.forEach(function ($parent) {
+    var $children = $parent.querySelectorAll('[data-animation-child="grow"]');
+    var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+      scrollTrigger: {
+        trigger: $parent,
+        start: "top 80%",
+        end: "top 30%",
+        toggleActions: "play none none reverse"
+      }
+    });
+    fadeInTimeline.from($children, {
+      scale: 0.5,
+      stagger: {
+        amount: 0.2,
+        from: "end"
+      }
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/scripts/animations/horizontalScroll.js":
 /*!****************************************************!*\
   !*** ./src/scripts/animations/horizontalScroll.js ***!
@@ -9931,17 +9970,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var _mouse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mouse.js */ "./src/scripts/animations/mouse.js");
-/* harmony import */ var _titleFadeIn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./titleFadeIn.js */ "./src/scripts/animations/titleFadeIn.js");
-
 
 
 var $wrapper = document.querySelector("[data-animation='loader']");
 var $logo = document.querySelector("[data-animation-child='logo']");
 function logoTimeline() {
   var $logo = document.querySelector("[data-animation-child='logo']");
-  var tl = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.timeline({
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
     delay: 1
   });
   tl.to($logo, {
@@ -9957,15 +9994,15 @@ function logoTimeline() {
 }
 function wrapperTimeline() {
   var $wrapper = document.querySelector("[data-animation='loader']");
-  var tl = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.timeline();
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline();
   tl.to($wrapper, {
     xPercent: 100
   });
   return tl;
 }
 function initPageLoaderAnimation() {
-  var masterTimeline = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.timeline();
-  masterTimeline.add(logoTimeline($logo)).add(wrapperTimeline($wrapper).add(_mouse_js__WEBPACK_IMPORTED_MODULE_0__.mouseEnterAnimation, "<+.5").add(_titleFadeIn_js__WEBPACK_IMPORTED_MODULE_1__.titleFadeInAnimation, "<+.5"));
+  var masterTimeline = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline();
+  masterTimeline.add(logoTimeline($logo)).add(wrapperTimeline($wrapper).add(_mouse_js__WEBPACK_IMPORTED_MODULE_0__.mouseEnterAnimation, "<+.5"));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initPageLoaderAnimation);
 
@@ -10056,6 +10093,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/horizontalScroll */ "./src/scripts/animations/horizontalScroll.js");
 /* harmony import */ var _animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations/fadeInListItems */ "./src/scripts/animations/fadeInListItems.js");
 /* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
+/* harmony import */ var _animations_grow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animations/grow */ "./src/scripts/animations/grow.js");
+
 
 
 
@@ -10072,6 +10111,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_animations_grow__WEBPACK_IMPORTED_MODULE_8__["default"])();
   (0,_lottie__WEBPACK_IMPORTED_MODULE_7__["default"])();
 });
 

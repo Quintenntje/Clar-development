@@ -1,6 +1,5 @@
 .info-card {
   font-family: var(--font-sans);
-  color: var(--foreground-color);
 
   .info-card__title {
     font-size: var(--list);
@@ -36,9 +35,13 @@
 }
 
 .info-card--white {
-  color: var(--background-color);
-
   .info-card__title {
     border-color: var(--background-color);
+  }
+}
+
+.info-card--green {
+  .info-card__title {
+    border-color: var(--green-light);
   }
 }

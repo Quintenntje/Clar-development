@@ -10,7 +10,7 @@
 @import url("./components/_info-card.css");
 @import url("./layouts/_testimonials-container.css");
 @import url("./components/_testimonials.css");
-@import url("./layouts/_philosophy.css");
+@import url("./layouts/_section.css");
 
 body {
   text-transform: uppercase;

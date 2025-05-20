@@ -1,0 +1,14 @@
+.section{
+    color: var(--foreground-color);
+}
+
+
+.section--blue {
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+}
+
+.section--green {
+  background-color: var(--green-dark);
+  color: var(--green-light);
+}
