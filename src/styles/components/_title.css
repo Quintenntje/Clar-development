@@ -8,12 +8,14 @@
   position: relative;
   z-index: 1000;
   background-color: var(--background-color);
+  height: 100vh;
 }
 
 .title-section {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-inline: var(--spacing-xl);
 
   .title-section__text {
     text-wrap: nowrap;
@@ -30,5 +32,9 @@
       flex-direction: row-reverse;
       font-family: var(--font-serif-light-italic);
     }
+  }
+
+  .title-section__text--white {
+    color: var(--white-cream);
   }
 }

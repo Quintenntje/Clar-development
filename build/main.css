@@ -161,8 +161,8 @@ h6 {
 
 @font-face {
     font-family: "Akzidenz-Grotesk BQ";
-    src: url("/assets/fonts/AkzidenzGroteskBQ-Regular.woff2") format("woff2"),
-         url("/assets/fonts/AkzidenzGroteskBQ-Regular.woff") format("woff");
+    src: url("/assets/fonts/AkzidenzGroteskBQ.woff2") format("woff2"),
+         url("/assets/fonts/AkzidenzGroteskBQ.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -296,12 +296,14 @@ blockquote{
   position: relative;
   z-index: 1000;
   background-color: var(--background-color);
+  height: 100vh;
 }
 
 .title-section {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-inline: var(--spacing-xl);
 
   .title-section__text {
     text-wrap: nowrap;
@@ -318,6 +320,10 @@ blockquote{
       flex-direction: row-reverse;
       font-family: var(--font-serif-light-italic);
     }
+  }
+
+  .title-section__text--white {
+    color: var(--white-cream);
   }
 }
 
@@ -355,7 +361,6 @@ blockquote{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-inline: var(--spacing-xl);
 }
 
 .info-card {
@@ -374,7 +379,15 @@ blockquote{
     font-size: var(--text);
   }
 }
-  
+
+.info-card--white {
+  color: var(--background-color);
+
+  .info-card__title {
+    border-color: var(--background-color);
+  }
+}
+
 .testimonials-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -416,14 +429,23 @@ blockquote{
   }
 }
 
+.philosophy {
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+}
+
 body {
   text-transform: uppercase;
 }
-main {
-  padding-inline: 2rem;
+
+.container {
+  padding: 4rem;
+  max-width: 1500px;
+  margin-inline: auto;
 }
 
-.content {
-  height: 100%;
+.content{
+  padding-inline: 2rem;
+  padding-block: 0;
 }
 

@@ -10,14 +10,19 @@
 @import url("./components/_info-card.css");
 @import url("./layouts/_testimonials-container.css");
 @import url("./components/_testimonials.css");
+@import url("./layouts/_philosophy.css");
 
 body {
   text-transform: uppercase;
 }
-main {
-  padding-inline: 2rem;
+
+.container {
+  padding: 4rem;
+  max-width: 1500px;
+  margin-inline: auto;
 }
 
-.content {
-  height: 100%;
+.content{
+  padding-inline: 2rem;
+  padding-block: 0;
 }

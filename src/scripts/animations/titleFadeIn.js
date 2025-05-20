@@ -11,7 +11,7 @@ export default function initTitleFadeInAnimation() {
     );
 
     $titleText.forEach(($text, index) => {
-      const delay = index * 0.3;
+      const delay = index * 0.5;
 
       gsap.from($text, {
         scrollTrigger: {
@@ -23,7 +23,7 @@ export default function initTitleFadeInAnimation() {
         opacity: 0,
         y: 20,
         skewX: 10,
-        delay: delay + 3,
+        delay: delay,
       });
     });
   });

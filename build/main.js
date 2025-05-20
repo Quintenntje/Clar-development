@@ -9768,7 +9768,7 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 function initTitleStickAnimation() {
-  var $containers = document.querySelectorAll("[data-animation='title-pin'");
+  var $containers = document.querySelectorAll("[data-animation='title-pin']");
   $containers.forEach(function ($container) {
     var $title = $container.querySelectorAll("[data-animation-child='title-pin']");
     $title.forEach(function ($child) {
@@ -9778,11 +9778,12 @@ function initTitleStickAnimation() {
 }
 function stickAnimation($container, $child) {
   var containerHeight = $container.offsetHeight;
+  var childHeight = $child.offsetHeight;
   var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: $container,
       start: "top top",
-      end: "bottom top",
+      end: "bottom bottom-=".concat(childHeight),
       scrub: true
     }
   });
@@ -9852,15 +9853,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var _mouse_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mouse.js */ "./src/scripts/animations/mouse.js");
+/* harmony import */ var _titleFadeIn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./titleFadeIn.js */ "./src/scripts/animations/titleFadeIn.js");
+
 
 
 var $wrapper = document.querySelector("[data-animation='loader']");
 var $logo = document.querySelector("[data-animation-child='logo']");
 function logoTimeline() {
   var $logo = document.querySelector("[data-animation-child='logo']");
-  var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.timeline({
     delay: 1
   });
   tl.to($logo, {
@@ -9876,15 +9879,15 @@ function logoTimeline() {
 }
 function wrapperTimeline() {
   var $wrapper = document.querySelector("[data-animation='loader']");
-  var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline();
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.timeline();
   tl.to($wrapper, {
     xPercent: 100
   });
   return tl;
 }
 function initPageLoaderAnimation() {
-  var masterTimeline = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline();
-  masterTimeline.add(logoTimeline($logo)).add(wrapperTimeline($wrapper).add(_mouse_js__WEBPACK_IMPORTED_MODULE_0__.mouseEnterAnimation, "<+.5"));
+  var masterTimeline = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.timeline();
+  masterTimeline.add(logoTimeline($logo)).add(wrapperTimeline($wrapper).add(_mouse_js__WEBPACK_IMPORTED_MODULE_0__.mouseEnterAnimation, "<+.5").add(_titleFadeIn_js__WEBPACK_IMPORTED_MODULE_1__.titleFadeInAnimation, "<+.5"));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initPageLoaderAnimation);
 
@@ -9910,7 +9913,7 @@ function initTitleFadeInAnimation() {
   $titles.forEach(function ($title) {
     var $titleText = $title.querySelectorAll("[data-animation-child='title-fade-in']");
     $titleText.forEach(function ($text, index) {
-      var delay = index * 0.3;
+      var delay = index * 0.5;
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($text, {
         scrollTrigger: {
           trigger: $title,
@@ -9920,7 +9923,7 @@ function initTitleFadeInAnimation() {
         opacity: 0,
         y: 20,
         skewX: 10,
-        delay: delay + 3
+        delay: delay
       });
     });
   });

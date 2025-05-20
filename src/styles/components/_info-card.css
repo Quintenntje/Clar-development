@@ -14,4 +14,11 @@
     font-size: var(--text);
   }
 }
-  
+
+.info-card--white {
+  color: var(--background-color);
+
+  .info-card__title {
+    border-color: var(--background-color);
+  }
+}
