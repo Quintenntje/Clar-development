@@ -181,8 +181,14 @@
           </h2>
 
           <div class="testimonials-container">
-            <div class="info-wrapper">
-              <div data-animation="fade-in" class="info-card info-card--white">
+            <div data-animation="title-pin">
+              <canvas
+                data-lottie-source="dots.lottie"
+                data-animation-child="title-pin"
+              ></canvas>
+            </div>
+            <div data-animation="fade-in" class="info-card info-card--white">
+              <div>
                 <h3 class="info-card__title">Our promise</h3>
                 <p class="info-card__text">
                   Companies are no longer passive actors of change, they must
@@ -207,13 +213,25 @@
 
               <div data-animation="fade-in" class="info-card info-card--white">
                 <h3 class="info-card__title">Our expertises</h3>
-                <ul class="info-card__list">
-                  <li>Brand identity and storytelling</li>
-                  <li>Brand platform and expression system</li>
-                  <li>Trend books and content creation</li>
-                  <li>Strategic communication plan</li>
-                  <li>Risk prevention and crisis communication</li>
-                  <li>Media training for spokespersons</li>
+                <ul data-animation="fade-in-list-items" class="info-card__list">
+                  <li data-animation-child="fade-in-list-items" class="info-card__list__item">
+                    Brand identity and storytelling
+                  </li>
+                  <li data-animation-child="fade-in-list-items" class="info-card__list__item">
+                    Brand platform and expression system
+                  </li>
+                  <li data-animation-child="fade-in-list-items" class="info-card__list__item">
+                    Trend books and content creation
+                  </li>
+                  <li data-animation-child="fade-in-list-items" class="info-card__list__item">
+                    Strategic communication plan
+                  </li>
+                  <li data-animation-child="fade-in-list-items" class="info-card__list__item">
+                    Risk prevention and crisis communication
+                  </li>
+                  <li data-animation-child="fade-in-list-items" class="info-card__list__item">
+                    Media training for spokespersons
+                  </li>
                 </ul>
               </div>
             </div>

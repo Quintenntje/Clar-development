@@ -13,6 +13,26 @@
     margin-top: var(--spacing-base);
     font-size: var(--text);
   }
+
+  .info-card__list {
+    margin-top: var(--spacing-base);
+    font-size: var(--text);
+    list-style: none;
+    padding-left: 0;
+
+    .info-card__list__item {
+      display: flex;
+      align-items: center;
+      &::before {
+        content: "*";
+        display: inline-block;
+        font-size: 1.6em;
+        line-height: 0.8;
+        transform: translateY(6px);
+        margin-right: var(--spacing-sm);
+      }
+    }
+  }
 }
 
 .info-card--white {

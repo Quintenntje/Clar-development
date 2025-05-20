@@ -4,6 +4,8 @@ import initTitleStickAnimation from "./animations/itemStick";
 import initTitleFadeInAnimation from "./animations/titleFadeIn";
 import initFadeInAnimation from "./animations/fadeIn";
 import initHorizontalScrollAnimation from "./animations/horizontalScroll";
+import initFadeInListItemsAnimation from "./animations/fadeInListItems";
+import loadLottieFiles from "./lottie";
 
 document.addEventListener("DOMContentLoaded", () => {
   initMouseAnimation();
@@ -12,4 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initTitleFadeInAnimation();
   initFadeInAnimation();
   initHorizontalScrollAnimation();
+  initFadeInListItemsAnimation();
+  loadLottieFiles();
 });
