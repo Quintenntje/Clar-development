@@ -3,6 +3,7 @@ import initPageLoaderAnimation from "./animations/pageLoader";
 import initTitleStickAnimation from "./animations/itemStick";
 import initTitleFadeInAnimation from "./animations/titleFadeIn";
 import initFadeInAnimation from "./animations/fadeIn";
+import initHorizontalScrollAnimation from "./animations/horizontalScroll";
 
 document.addEventListener("DOMContentLoaded", () => {
   initMouseAnimation();
@@ -10,4 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initTitleStickAnimation();
   initTitleFadeInAnimation();
   initFadeInAnimation();
+  initHorizontalScrollAnimation();
 });

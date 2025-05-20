@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-inline: var(--spacing-xl);
-  margin-top: 20rem;
+  margin-top: 10rem;
+  width: 100%;
 
   .info-card {
     margin-top: var(--spacing-xl);

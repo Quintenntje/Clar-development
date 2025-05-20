@@ -9691,13 +9691,61 @@ function initFadeInAnimation() {
         trigger: $el,
         start: "top 80%",
         end: "top 30%",
-        toggleActions: "play none none reverse",
-        markers: true
+        toggleActions: "play none none reverse"
       }
     });
     fadeInTimeline.from($el, {
       opacity: 0,
       y: 100
+    });
+  });
+}
+
+/***/ }),
+
+/***/ "./src/scripts/animations/horizontalScroll.js":
+/*!****************************************************!*\
+  !*** ./src/scripts/animations/horizontalScroll.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ initHorizontalScrollAnimation)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+function initHorizontalScrollAnimation() {
+  var $scrollContainer = document.querySelectorAll('[data-animation="horizontal-scroll"]');
+  $scrollContainer.forEach(function ($container) {
+    var $scrollItems = $container.querySelectorAll('[data-animation-child="horizontal-scroll"]');
+    var panelContainerMovement = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
+      x: function x() {
+        return "-".concat($container.scrollWidth);
+      },
+      scrollTrigger: {
+        trigger: $container,
+        scrub: true,
+        pin: true,
+        anticipatePin: true,
+        start: "top top",
+        end: function end() {
+          return "+=".concat($container.scrollWidth);
+        },
+        invalidateOnRefresh: true
+      }
+    });
+    $scrollItems.forEach(function ($item) {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+        // scrollTrigger: {
+        //   trigger: $item,
+        //   start: "0 50%",
+        //   containerAnimation: panelContainerMovement,
+        // },
+      });
     });
   });
 }
@@ -9866,7 +9914,8 @@ function initTitleFadeInAnimation() {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($text, {
         scrollTrigger: {
           trigger: $title,
-          start: "top 80%"
+          start: "top 80%",
+          toggleActions: "play none none reverse"
         },
         opacity: 0,
         y: 20,
@@ -9891,6 +9940,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animations_itemStick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/itemStick */ "./src/scripts/animations/itemStick.js");
 /* harmony import */ var _animations_titleFadeIn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animations/titleFadeIn */ "./src/scripts/animations/titleFadeIn.js");
 /* harmony import */ var _animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/fadeIn */ "./src/scripts/animations/fadeIn.js");
+/* harmony import */ var _animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/horizontalScroll */ "./src/scripts/animations/horizontalScroll.js");
+
 
 
 
@@ -9902,6 +9953,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_itemStick__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_animations_titleFadeIn__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__["default"])();
 });
 
 /***/ }),

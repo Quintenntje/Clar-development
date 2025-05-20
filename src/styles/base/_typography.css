@@ -19,6 +19,11 @@ h1 {
   font-size: var(--subtitle);
 }
 
+blockquote{
+  font-size: var(--font-subtitle);
+  
+}
+
 @media (min-width: 768px) {
   h1 {
     font-size: var(--font-title-min);

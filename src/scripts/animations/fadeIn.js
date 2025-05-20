@@ -12,7 +12,6 @@ export default function initFadeInAnimation() {
         start: "top 80%",
         end: "top 30%",
         toggleActions: "play none none reverse",
-        markers: true,
       },
     });
 

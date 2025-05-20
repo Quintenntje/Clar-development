@@ -17,6 +17,7 @@ export default function initTitleFadeInAnimation() {
         scrollTrigger: {
           trigger: $title,
           start: "top 80%",
+          toggleActions: "play none none reverse",
         },
 
         opacity: 0,

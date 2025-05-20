@@ -9,6 +9,7 @@
 @import url("./layouts/_hero.css");
 @import url("./components/_info-card.css");
 @import url("./layouts/_testimonials-container.css");
+@import url("./components/_testimonials.css");
 
 body {
   text-transform: uppercase;
@@ -17,6 +18,6 @@ main {
   padding-inline: 2rem;
 }
 
-.content{
+.content {
   height: 100%;
 }
