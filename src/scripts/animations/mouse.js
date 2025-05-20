@@ -15,6 +15,8 @@ export const mouseEnterAnimation = gsap.from($mouseball, {
 export default function initMouseAnimation() {
   const mm = gsap.matchMedia();
 
+  changeMouseBallColor();
+
   mm.add("(pointer: fine)", () => {
     const quickToX = gsap.quickTo($mouseContainer, "x");
     const quickToY = gsap.quickTo($mouseContainer, "y");
@@ -37,6 +39,21 @@ export default function initMouseAnimation() {
       gsap.to($mouseContainer, {
         scale: 1,
         ease: "power2.inOut",
+      });
+    });
+  });
+}
+
+function changeMouseBallColor() {
+  const $sections = document.querySelectorAll("[data-mouse-color]");
+
+  $sections.forEach(($section) => {
+    const color = $section.dataset.mouseColor;
+
+    $section.addEventListener("mouseover", () => {
+      gsap.to($mouseball, {
+        backgroundColor: color,
+        duration: 0.5,
       });
     });
   });

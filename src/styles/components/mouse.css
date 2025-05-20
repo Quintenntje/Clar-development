@@ -1,5 +1,7 @@
 .mouse-container {
   position: fixed;
+  mix-blend-mode: hard-light;
+
 
   & .mouse-container__ball {
     position: fixed;
@@ -10,6 +12,7 @@
     aspect-ratio: 1;
     background-color: var(--blue);
     border-radius: 99%;
+    
 
     @media screen and (pointer: coarse) {
       display: none;

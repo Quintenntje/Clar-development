@@ -9934,6 +9934,7 @@ var mouseEnterAnimation = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($mouseball
 });
 function initMouseAnimation() {
   var mm = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
+  changeMouseBallColor();
   mm.add("(pointer: fine)", function () {
     var quickToX = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.quickTo($mouseContainer, "x");
     var quickToY = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.quickTo($mouseContainer, "y");
@@ -9953,6 +9954,18 @@ function initMouseAnimation() {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseContainer, {
         scale: 1,
         ease: "power2.inOut"
+      });
+    });
+  });
+}
+function changeMouseBallColor() {
+  var $sections = document.querySelectorAll("[data-mouse-color]");
+  $sections.forEach(function ($section) {
+    var color = $section.dataset.mouseColor;
+    $section.addEventListener("mouseover", function () {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
+        backgroundColor: color,
+        duration: 0.5
       });
     });
   });
