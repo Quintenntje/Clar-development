@@ -10043,6 +10043,39 @@ function initPageLoaderAnimation() {
 
 /***/ }),
 
+/***/ "./src/scripts/animations/parallax.js":
+/*!********************************************!*\
+  !*** ./src/scripts/animations/parallax.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ initParallaxEffectAnimation)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+function initParallaxEffectAnimation() {
+  var $containers = document.querySelectorAll('[data-animation="parallax"]');
+  $containers.forEach(function ($container) {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($container, {
+      scrollTrigger: {
+        trigger: $container,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      },
+      y: "-100vh",
+      ease: "none"
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/scripts/animations/shrink.js":
 /*!******************************************!*\
   !*** ./src/scripts/animations/shrink.js ***!
@@ -10166,6 +10199,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
 /* harmony import */ var _animations_grow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animations/grow */ "./src/scripts/animations/grow.js");
 /* harmony import */ var _animations_shrink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./animations/shrink */ "./src/scripts/animations/shrink.js");
+/* harmony import */ var _animations_parallax__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./animations/parallax */ "./src/scripts/animations/parallax.js");
+
 
 
 
@@ -10186,6 +10221,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_animations_grow__WEBPACK_IMPORTED_MODULE_8__["default"])();
   (0,_animations_shrink__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  (0,_animations_parallax__WEBPACK_IMPORTED_MODULE_10__["default"])();
   (0,_lottie__WEBPACK_IMPORTED_MODULE_7__["default"])();
 });
 

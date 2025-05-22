@@ -463,10 +463,9 @@ blockquote{
   }
 }
 
-.section{
-    color: var(--foreground-color);
+.section {
+  color: var(--foreground-color);
 }
-
 
 .section--blue {
   background-color: var(--foreground-color);
@@ -478,21 +477,25 @@ blockquote{
   color: var(--green-light);
 }
 
-.section--orange{
+.section--orange {
   background-color: var(--orange);
   color: var(--peach);
+  position: relative;
+  z-index: 10;
 }
 
-.section--yellow{
+.section--yellow {
   background-color: var(--yellow);
   color: var(--peach);
+
+  overflow: hidden;
 }
 
-.section--full{
+.section--full {
   min-height: 100svh;
   width: 100vw;
-
 }
+
 .team-member {
   border-bottom: 1px solid var(--peach);
   padding-block: var(--spacing-lg);

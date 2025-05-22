@@ -8,6 +8,7 @@ import initFadeInListItemsAnimation from "./animations/fadeInListItems";
 import loadLottieFiles from "./lottie";
 import initGrowAnimation from "./animations/grow";
 import initShrinkAnimation from "./animations/shrink";
+import initParallaxEffectAnimation from "./animations/parallax";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,5 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initFadeInListItemsAnimation();
   initGrowAnimation();
   initShrinkAnimation();
+  initParallaxEffectAnimation();
   loadLottieFiles();
 });
