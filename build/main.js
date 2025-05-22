@@ -9985,9 +9985,9 @@ function changeMouseToImage() {
     });
     $image.addEventListener("mouseleave", function () {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseballImage, {
-        backgroundImage: "url()",
-        duration: 0.5,
-        scale: 0
+        scale: 0,
+        backgroundImage: "url(../../assets/".concat(image),
+        duration: 0.5
       });
     });
   });

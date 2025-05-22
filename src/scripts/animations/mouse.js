@@ -79,9 +79,9 @@ function changeMouseToImage() {
 
     $image.addEventListener("mouseleave", () => {
       gsap.to($mouseballImage, {
-        backgroundImage: "url()",
-        duration: 0.5,
         scale: 0,
+        backgroundImage: `url(../../assets/${image}`,
+        duration: 0.5,
       });
     });
   });
