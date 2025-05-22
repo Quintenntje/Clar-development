@@ -12,3 +12,8 @@
   background-color: var(--green-dark);
   color: var(--green-light);
 }
+
+.section--orange{
+  background-color: var(--orange);
+  color: var(--peach);
+}

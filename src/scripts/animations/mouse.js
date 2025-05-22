@@ -4,6 +4,9 @@ const $mouseContainer = document.querySelector("[data-animation='mouse']");
 const $mouseball = $mouseContainer.querySelector(
   "[data-animation-child='ball']"
 );
+const $mouseballImage = $mouseContainer.querySelector(
+  "[data-animation-child='image']"
+);
 
 export const mouseEnterAnimation = gsap.from($mouseball, {
   opacity: 0,
@@ -16,6 +19,7 @@ export default function initMouseAnimation() {
   const mm = gsap.matchMedia();
 
   changeMouseBallColor();
+  changeMouseToImage();
 
   mm.add("(pointer: fine)", () => {
     const quickToX = gsap.quickTo($mouseContainer, "x");
@@ -54,6 +58,30 @@ function changeMouseBallColor() {
       gsap.to($mouseball, {
         backgroundColor: color,
         duration: 0.5,
+      });
+    });
+  });
+}
+
+function changeMouseToImage() {
+  const $mouseImage = document.querySelectorAll("[data-mouse-image]");
+
+  $mouseImage.forEach(($image) => {
+    const image = $image.dataset.mouseImage;
+
+    $image.addEventListener("mouseover", () => {
+      gsap.to($mouseballImage, {
+        backgroundImage: `url(../../assets/${image})`,
+        duration: 0.5,
+        scale: 1,
+      });
+    });
+
+    $image.addEventListener("mouseleave", () => {
+      gsap.to($mouseballImage, {
+        backgroundImage: "url()",
+        duration: 0.5,
+        scale: 0,
       });
     });
   });

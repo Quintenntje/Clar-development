@@ -9926,6 +9926,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var $mouseContainer = document.querySelector("[data-animation='mouse']");
 var $mouseball = $mouseContainer.querySelector("[data-animation-child='ball']");
+var $mouseballImage = $mouseContainer.querySelector("[data-animation-child='image']");
 var mouseEnterAnimation = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($mouseball, {
   opacity: 0,
   scale: 0,
@@ -9935,6 +9936,7 @@ var mouseEnterAnimation = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($mouseball
 function initMouseAnimation() {
   var mm = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
   changeMouseBallColor();
+  changeMouseToImage();
   mm.add("(pointer: fine)", function () {
     var quickToX = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.quickTo($mouseContainer, "x");
     var quickToY = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.quickTo($mouseContainer, "y");
@@ -9966,6 +9968,26 @@ function changeMouseBallColor() {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
         backgroundColor: color,
         duration: 0.5
+      });
+    });
+  });
+}
+function changeMouseToImage() {
+  var $mouseImage = document.querySelectorAll("[data-mouse-image]");
+  $mouseImage.forEach(function ($image) {
+    var image = $image.dataset.mouseImage;
+    $image.addEventListener("mouseover", function () {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseballImage, {
+        backgroundImage: "url(../../assets/".concat(image, ")"),
+        duration: 0.5,
+        scale: 1
+      });
+    });
+    $image.addEventListener("mouseleave", function () {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseballImage, {
+        backgroundImage: "url()",
+        duration: 0.5,
+        scale: 0
       });
     });
   });

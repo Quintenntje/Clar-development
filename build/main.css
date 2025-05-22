@@ -243,8 +243,8 @@ blockquote{
 
 .mouse-container {
   position: fixed;
-  mix-blend-mode: hard-light;
-
+  z-index: 1001;
+  pointer-events: none;
 
   & .mouse-container__ball {
     position: fixed;
@@ -255,11 +255,20 @@ blockquote{
     aspect-ratio: 1;
     background-color: var(--blue);
     border-radius: 99%;
-    
 
     @media screen and (pointer: coarse) {
       display: none;
     }
+  }
+  & .mouse-container__image {
+    position: fixed;
+    left: calc((var(--spacing-lg) / 2) * -1);
+    top: calc((var(--spacing-lg) / 2) * -1);
+    width: 300px;
+    height: 500px;
+    z-index: 9999;
+    background-size: cover;
+    scale: 0;
   }
 }
 
@@ -324,6 +333,10 @@ blockquote{
     }
   }
 }
+
+  .title-section--no-spacing {
+    padding-inline: 0;
+  }
 
 .header {
   display: flex;
@@ -463,6 +476,26 @@ blockquote{
 .section--green {
   background-color: var(--green-dark);
   color: var(--green-light);
+}
+
+.section--orange{
+  background-color: var(--orange);
+  color: var(--peach);
+}
+.team-member {
+  border-bottom: 1px solid var(--peach);
+  padding-block: var(--spacing-lg);
+
+  .team-member__image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+  }
 }
 
 body {

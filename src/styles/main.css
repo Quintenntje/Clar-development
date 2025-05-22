@@ -11,6 +11,7 @@
 @import url("./layouts/_testimonials-container.css");
 @import url("./components/_testimonials.css");
 @import url("./layouts/_section.css");
+@import url("./components/_team.css");
 
 body {
   text-transform: uppercase;

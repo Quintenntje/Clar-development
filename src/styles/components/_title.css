@@ -33,3 +33,7 @@
     }
   }
 }
+
+  .title-section--no-spacing {
+    padding-inline: 0;
+  }
