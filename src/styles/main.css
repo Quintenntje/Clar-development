@@ -12,6 +12,7 @@
 @import url("./components/_testimonials.css");
 @import url("./layouts/_section.css");
 @import url("./components/_team.css");
+@import url("./layouts/_contact.css");
 
 body {
   text-transform: uppercase;

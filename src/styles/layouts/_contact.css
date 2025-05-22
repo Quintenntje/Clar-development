@@ -1,0 +1,30 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+
+  & .contact__title {
+    font-family: var(--font-serif-light);
+    font-size: var(--font-title-min);
+    font-weight: 400;
+    margin-bottom: var(--spacing-xl);
+    text-transform: none;
+    color: var(--green-dark);
+  }
+
+  .contact__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: var(--foreground-color);
+    color: var(--background-color);
+    border-radius: 99%;
+    height: 10rem;
+    width: 10rem;
+    aspect-ratio: 1;
+    font-size: var(--font-subtitle);
+  }
+}

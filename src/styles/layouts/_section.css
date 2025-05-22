@@ -17,3 +17,14 @@
   background-color: var(--orange);
   color: var(--peach);
 }
+
+.section--yellow{
+  background-color: var(--yellow);
+  color: var(--peach);
+}
+
+.section--full{
+  min-height: 100svh;
+  width: 100vw;
+
+}

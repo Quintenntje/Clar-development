@@ -7,6 +7,8 @@ import initHorizontalScrollAnimation from "./animations/horizontalScroll";
 import initFadeInListItemsAnimation from "./animations/fadeInListItems";
 import loadLottieFiles from "./lottie";
 import initGrowAnimation from "./animations/grow";
+import initShrinkAnimation from "./animations/shrink";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   initMouseAnimation();
@@ -17,5 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initHorizontalScrollAnimation();
   initFadeInListItemsAnimation();
   initGrowAnimation();
+  initShrinkAnimation();
   loadLottieFiles();
 });

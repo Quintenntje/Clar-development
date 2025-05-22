@@ -10043,6 +10043,42 @@ function initPageLoaderAnimation() {
 
 /***/ }),
 
+/***/ "./src/scripts/animations/shrink.js":
+/*!******************************************!*\
+  !*** ./src/scripts/animations/shrink.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ initShrinkAnimation)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+
+function initShrinkAnimation() {
+  var $shrinkElements = document.querySelectorAll('[data-animation="shrink"]');
+  $shrinkElements.forEach(function ($el) {
+    $el.addEventListener("mouseenter", function () {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($el, {
+        scale: 0.8,
+        rotation: 15,
+        duration: 0.5,
+        ease: "back.in(2)"
+      });
+    });
+    $el.addEventListener("mouseleave", function () {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($el, {
+        scale: 1,
+        rotation: 0,
+        duration: 0.5,
+        ease: "back.out(2)"
+      });
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./src/scripts/animations/titleFadeIn.js":
 /*!***********************************************!*\
   !*** ./src/scripts/animations/titleFadeIn.js ***!
@@ -10129,6 +10165,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations/fadeInListItems */ "./src/scripts/animations/fadeInListItems.js");
 /* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
 /* harmony import */ var _animations_grow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animations/grow */ "./src/scripts/animations/grow.js");
+/* harmony import */ var _animations_shrink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./animations/shrink */ "./src/scripts/animations/shrink.js");
+
 
 
 
@@ -10147,6 +10185,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_animations_grow__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  (0,_animations_shrink__WEBPACK_IMPORTED_MODULE_9__["default"])();
   (0,_lottie__WEBPACK_IMPORTED_MODULE_7__["default"])();
 });
 
