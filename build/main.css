@@ -308,7 +308,7 @@ blockquote {
 .title {
   display: flex;
   justify-content: end;
-  font-size: var(--font-title-mobile);
+  font-size: var(--font-title-min);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   color: var(--blue);
@@ -319,7 +319,6 @@ blockquote {
 
   @media screen and (min-width: 768px) {
     font-size: var(--font-display-min);
-    
   }
 
   @media screen and (min-width: 1200px) {
@@ -331,7 +330,6 @@ blockquote {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-inline: var(--spacing-base);
 
   .title-section__text {
     text-wrap: nowrap;
@@ -365,10 +363,15 @@ blockquote {
 
 .header {
   display: flex;
+  align-items: center;
   justify-content: right;
   color: var(--blue);
-  gap: var(--spacing-base);
-  padding: var(--spacing-base);
+  margin-top: 1rem;
+
+  @media screen and (min-width: 768px) {
+    align-items: flex-start;
+    margin-top: 0;
+  }
 
   & .header__logo {
     font-size: var(--font-title-mobile);
@@ -378,28 +381,38 @@ blockquote {
 
     @media screen and (min-width: 768px) {
       font-size: var(--font-title-min);
+      padding: var(--spacing-base);
     }
 
     @media screen and (min-width: 1200px) {
       font-size: var(--font-title-max);
     }
   }
+
   & .header__text {
-    margin-top: var(--spacing-base);
+    text-align: right;
     font-family: var(--font-sans);
     font-size: var(--font-base);
+    max-width: 150px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: var(--spacing-lg);
+      max-width: none;
+      text-align: left;
+    }
   }
 }
 
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 4fr;
- gap: var(--spacing-base);
+  gap: var(--spacing-base);
   min-height: 100vh;
   height: 100%;
 
   @media screen and (min-width: 1200px) {
     gap: var(--spacing-xl);
+    grid-template-columns: 1fr 4fr;
   }
 }
 
@@ -462,12 +475,20 @@ blockquote {
 .testimonials-container {
   display: grid;
   grid-template-columns: 1fr;
-  padding-inline: var(--spacing-xl);
-  margin-top: 10rem;
+  padding-inline: 0;
+  margin-top: var(--spacing-xl);
   width: 100%;
+  gap: var(--spacing-base);
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: var(--spacing-xl);
+    margin-top: 5rem;
+    gap: 0;
+  }
 
   @media screen and (min-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10rem;
   }
 
   .info-card {
@@ -549,9 +570,10 @@ blockquote {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    margin-block: var(--spacing-base);
 
     @media screen and (min-width: 768px) {
-        display: none;
+      display: none;
     }
   }
 }

@@ -13,7 +13,7 @@ export default function initParallaxEffectAnimation() {
         end: "bottom top",
         scrub: true,
       },
-      y: "-100vh",
+      y: "-100svh",
       ease: "none",
     });
   });

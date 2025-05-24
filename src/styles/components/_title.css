@@ -1,7 +1,7 @@
 .title {
   display: flex;
   justify-content: end;
-  font-size: var(--font-title-mobile);
+  font-size: var(--font-title-min);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   color: var(--blue);
@@ -12,7 +12,6 @@
 
   @media screen and (min-width: 768px) {
     font-size: var(--font-display-min);
-    
   }
 
   @media screen and (min-width: 1200px) {
@@ -24,7 +23,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-inline: var(--spacing-base);
 
   .title-section__text {
     text-wrap: nowrap;

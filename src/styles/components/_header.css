@@ -1,9 +1,14 @@
 .header {
   display: flex;
+  align-items: center;
   justify-content: right;
   color: var(--blue);
-  gap: var(--spacing-base);
-  padding: var(--spacing-base);
+  margin-top: 1rem;
+
+  @media screen and (min-width: 768px) {
+    align-items: flex-start;
+    margin-top: 0;
+  }
 
   & .header__logo {
     font-size: var(--font-title-mobile);
@@ -13,15 +18,24 @@
 
     @media screen and (min-width: 768px) {
       font-size: var(--font-title-min);
+      padding: var(--spacing-base);
     }
 
     @media screen and (min-width: 1200px) {
       font-size: var(--font-title-max);
     }
   }
+
   & .header__text {
-    margin-top: var(--spacing-base);
+    text-align: right;
     font-family: var(--font-sans);
     font-size: var(--font-base);
+    max-width: 150px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: var(--spacing-lg);
+      max-width: none;
+      text-align: left;
+    }
   }
 }
