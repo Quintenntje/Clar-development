@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTitleStickAnimation();
   initTitleFadeInAnimation();
   initFadeInAnimation();
-  // initHorizontalScrollAnimation();
+  initHorizontalScrollAnimation();
   initFadeInListItemsAnimation();
   initGrowAnimation();
   initShrinkAnimation();

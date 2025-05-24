@@ -9835,33 +9835,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+var $body = document.querySelector("body");
+var $horizontalScrollTitle = document.querySelector('[data-animation="horizontal-scroll-title"]');
 function initHorizontalScrollAnimation() {
   var $scrollContainer = document.querySelectorAll('[data-animation="horizontal-scroll"]');
   $scrollContainer.forEach(function ($container) {
     var $scrollItems = $container.querySelectorAll('[data-animation-child="horizontal-scroll"]');
-    var panelContainerMovement = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
+    var blue = "#082b9d";
+    var white = "#f8f6f1";
+    var ContainerMovement = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
       x: function x() {
         return "-".concat($container.scrollWidth);
       },
       scrollTrigger: {
-        trigger: $container,
+        trigger: $container.parentElement,
         scrub: true,
         pin: true,
-        anticipatePin: true,
         start: "top top",
         end: function end() {
           return "+=".concat($container.scrollWidth);
         },
-        invalidateOnRefresh: true
+        invalidateOnRefresh: true,
+        onLeaveBack: function onLeaveBack() {
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
+            backgroundColor: white
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
+            color: blue
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
+            backgroundColor: white,
+            color: blue
+          });
+        }
       }
     });
     $scrollItems.forEach(function ($item) {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-        // scrollTrigger: {
-        //   trigger: $item,
-        //   start: "0 50%",
-        //   containerAnimation: panelContainerMovement,
-        // },
+        scrollTrigger: {
+          trigger: $item,
+          start: "0 50%",
+          containerAnimation: ContainerMovement,
+          onUpdate: function onUpdate(self) {
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
+              backgroundColor: $item.getAttribute("data-color-bg")
+            });
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
+              color: $item.getAttribute("data-color-text")
+            });
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
+              backgroundColor: $item.getAttribute("data-color-bg"),
+              color: $item.getAttribute("data-color-text")
+            });
+          }
+        }
       });
     });
   });
@@ -10220,7 +10247,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_itemStick__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_animations_titleFadeIn__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  // initHorizontalScrollAnimation();
+  (0,_animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_animations_grow__WEBPACK_IMPORTED_MODULE_8__["default"])();
   (0,_animations_shrink__WEBPACK_IMPORTED_MODULE_9__["default"])();

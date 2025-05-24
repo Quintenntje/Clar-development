@@ -2,6 +2,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+const $body = document.querySelector("body");
+
+const $horizontalScrollTitle = document.querySelector(
+  '[data-animation="horizontal-scroll-title"]'
+);
+
 export default function initHorizontalScrollAnimation() {
   const $scrollContainer = document.querySelectorAll(
     '[data-animation="horizontal-scroll"]'
@@ -12,26 +18,55 @@ export default function initHorizontalScrollAnimation() {
       '[data-animation-child="horizontal-scroll"]'
     );
 
-    const panelContainerMovement = gsap.to($container, {
+    const blue = "#082b9d";
+    const white = "#f8f6f1";
+
+    const ContainerMovement = gsap.to($container, {
       x: () => `-${$container.scrollWidth}`,
       scrollTrigger: {
-        trigger: $container,
+        trigger: $container.parentElement,
         scrub: true,
         pin: true,
-        anticipatePin: true,
         start: "top top",
         end: () => `+=${$container.scrollWidth}`,
         invalidateOnRefresh: true,
+
+        onLeaveBack: () => {
+          gsap.to($body, {
+            backgroundColor: white,
+          });
+          gsap.to($container, {
+            color: blue,
+          });
+          gsap.to($horizontalScrollTitle, {
+            backgroundColor: white,
+            color: blue,
+          });
+        },
       },
     });
 
     $scrollItems.forEach(($item) => {
       gsap.to($item, {
-        // scrollTrigger: {
-        //   trigger: $item,
-        //   start: "0 50%",
-        //   containerAnimation: panelContainerMovement,
-        // },
+        scrollTrigger: {
+          trigger: $item,
+          start: "0 50%",
+          containerAnimation: ContainerMovement,
+
+          onUpdate: (self) => {
+            gsap.to($body, {
+              backgroundColor: $item.getAttribute("data-color-bg"),
+            });
+            gsap.to($container, {
+              color: $item.getAttribute("data-color-text"),
+            });
+
+            gsap.to($horizontalScrollTitle, {
+              backgroundColor: $item.getAttribute("data-color-bg"),
+              color: $item.getAttribute("data-color-text"),
+            });
+          },
+        },
       });
     });
   });

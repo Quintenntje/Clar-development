@@ -506,14 +506,17 @@ blockquote {
 }
 .testimonials {
   display: flex;
+  flex-wrap: nowrap;
   gap: var(--spacing-xl);
   margin-top: var(--spacing-section);
   position: relative;
-  min-width: 100vw;
+  width: -moz-max-content;
+  width: max-content;
 
   .testimonial {
     display: flex;
-    min-width: 300px;
+    max-width: 300px;
+    width: 100%;
     flex-direction: column;
     justify-content: top;
     align-items: start;
@@ -523,7 +526,6 @@ blockquote {
     .testimonial__author {
       font-size: var(--font-subtitle);
       font-weight: bold;
-      color: var(--accent-color);
     }
   }
 }
