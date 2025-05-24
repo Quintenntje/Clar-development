@@ -4,6 +4,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const $body = document.querySelector("body");
 
+const $mouseContainer = document.querySelector("[data-animation='mouse']");
+const $mouseball = $mouseContainer.querySelector(
+  "[data-animation-child='ball']"
+);
+const $mouseballImage = $mouseContainer.querySelector(
+  "[data-animation-child='image']"
+);
+
 const $horizontalScrollTitle = document.querySelector(
   '[data-animation="horizontal-scroll-title"]'
 );
@@ -30,6 +38,7 @@ export default function initHorizontalScrollAnimation() {
         start: "top top",
         end: () => `+=${$container.scrollWidth}`,
         invalidateOnRefresh: true,
+        anticipatePin: 1,
 
         onLeaveBack: () => {
           gsap.to($body, {
@@ -42,6 +51,10 @@ export default function initHorizontalScrollAnimation() {
             backgroundColor: white,
             color: blue,
           });
+
+          gsap.to($mouseball, {
+            backgroundColor: blue,
+          });
         },
       },
     });
@@ -52,6 +65,12 @@ export default function initHorizontalScrollAnimation() {
           trigger: $item,
           start: "0 50%",
           containerAnimation: ContainerMovement,
+
+          onLeaveBack: (self) => {
+            gsap.to($item, {
+              opacity: 1,
+            });
+          },
 
           onUpdate: (self) => {
             gsap.to($body, {
@@ -64,6 +83,14 @@ export default function initHorizontalScrollAnimation() {
             gsap.to($horizontalScrollTitle, {
               backgroundColor: $item.getAttribute("data-color-bg"),
               color: $item.getAttribute("data-color-text"),
+            });
+
+            gsap.to($mouseball, {
+              backgroundColor: $item.getAttribute("data-color-mouse"),
+            });
+
+            gsap.to($item, {
+              opacity: 0,
             });
           },
         },

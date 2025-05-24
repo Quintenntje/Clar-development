@@ -315,7 +315,7 @@ blockquote {
   position: relative;
   z-index: 1000;
   background-color: var(--background-color);
-  height: 100vh;
+  height: 300px;
 
   @media screen and (min-width: 768px) {
     font-size: var(--font-display-min);

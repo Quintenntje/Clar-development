@@ -9836,6 +9836,9 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
 var $body = document.querySelector("body");
+var $mouseContainer = document.querySelector("[data-animation='mouse']");
+var $mouseball = $mouseContainer.querySelector("[data-animation-child='ball']");
+var $mouseballImage = $mouseContainer.querySelector("[data-animation-child='image']");
 var $horizontalScrollTitle = document.querySelector('[data-animation="horizontal-scroll-title"]');
 function initHorizontalScrollAnimation() {
   var $scrollContainer = document.querySelectorAll('[data-animation="horizontal-scroll"]');
@@ -9856,6 +9859,7 @@ function initHorizontalScrollAnimation() {
           return "+=".concat($container.scrollWidth);
         },
         invalidateOnRefresh: true,
+        anticipatePin: 1,
         onLeaveBack: function onLeaveBack() {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
             backgroundColor: white
@@ -9867,6 +9871,9 @@ function initHorizontalScrollAnimation() {
             backgroundColor: white,
             color: blue
           });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
+            backgroundColor: blue
+          });
         }
       }
     });
@@ -9876,6 +9883,11 @@ function initHorizontalScrollAnimation() {
           trigger: $item,
           start: "0 50%",
           containerAnimation: ContainerMovement,
+          onLeaveBack: function onLeaveBack(self) {
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+              opacity: 1
+            });
+          },
           onUpdate: function onUpdate(self) {
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
               backgroundColor: $item.getAttribute("data-color-bg")
@@ -9886,6 +9898,12 @@ function initHorizontalScrollAnimation() {
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
               backgroundColor: $item.getAttribute("data-color-bg"),
               color: $item.getAttribute("data-color-text")
+            });
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
+              backgroundColor: $item.getAttribute("data-color-mouse")
+            });
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+              opacity: 0
             });
           }
         }
