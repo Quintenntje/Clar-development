@@ -9896,16 +9896,17 @@ function initTitleStickAnimation() {
 function stickAnimation($container, $child) {
   var containerHeight = $container.offsetHeight;
   var childHeight = $child.offsetHeight;
+  var scrollDistance = containerHeight - childHeight;
   var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     scrollTrigger: {
       trigger: $container,
       start: "top top",
-      end: "bottom bottom-=".concat(childHeight),
+      end: "+=".concat(scrollDistance),
       scrub: true
     }
   });
   tl.to($child, {
-    y: containerHeight
+    y: scrollDistance
   });
 }
 
@@ -10170,7 +10171,7 @@ function loadLottieFiles() {
     var dotLottie = new _lottiefiles_dotlottie_web__WEBPACK_IMPORTED_MODULE_0__.DotLottie({
       autoplay: true,
       loop: true,
-      speed: 1,
+      speed: 2,
       canvas: $canvas,
       layout: {
         fit: "cover",
@@ -10219,7 +10220,7 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_itemStick__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_animations_titleFadeIn__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  // initHorizontalScrollAnimation();
   (0,_animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_animations_grow__WEBPACK_IMPORTED_MODULE_8__["default"])();
   (0,_animations_shrink__WEBPACK_IMPORTED_MODULE_9__["default"])();

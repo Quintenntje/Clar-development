@@ -20,18 +20,18 @@ function stickAnimation($container, $child) {
   const containerHeight = $container.offsetHeight;
   const childHeight = $child.offsetHeight;
 
-
+  const scrollDistance = containerHeight - childHeight;
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: $container,
       start: "top top",
-      end: `bottom bottom-=${childHeight}`,
+      end: `+=${scrollDistance}`,
       scrub: true,
     },
   });
 
   tl.to($child, {
-    y: containerHeight,
+    y: scrollDistance,
   });
 }
