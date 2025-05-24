@@ -1,7 +1,10 @@
-.testimonials-wrapper{
+.testimonials-wrapper {
   overflow-x: hidden;
   width: 100%;
-  grid-column: span 2;
+
+  @media screen and (min-width: 1200px) {
+    grid-column: span 2;
+  }
 }
 .testimonials {
   display: flex;

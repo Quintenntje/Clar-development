@@ -220,13 +220,12 @@ h1 {
   margin-bottom: 0.5em;
 }
 
-.subtitle{
+.subtitle {
   font-size: var(--subtitle);
 }
 
-blockquote{
+blockquote {
   font-size: var(--font-subtitle);
-  
 }
 
 @media (min-width: 768px) {
@@ -269,6 +268,10 @@ blockquote{
     z-index: 9999;
     background-size: cover;
     scale: 0;
+
+    @media screen and (pointer: coarse) {
+      display: none;
+    }
   }
 }
 
@@ -282,6 +285,10 @@ blockquote{
   background-color: var(--accent-color);
 
   .loader-overlay__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 200px;
     width: 200px;
     position: relative;
@@ -301,7 +308,7 @@ blockquote{
 .title {
   display: flex;
   justify-content: end;
-  font-size: var(--font-display-max);
+  font-size: var(--font-title-mobile);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   color: var(--blue);
@@ -309,23 +316,41 @@ blockquote{
   z-index: 1000;
   background-color: var(--background-color);
   height: 100vh;
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--font-display-min);
+    
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: var(--font-display-max);
+  }
 }
 
 .title-section {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-inline: var(--spacing-xl);
+  padding-inline: var(--spacing-base);
 
   .title-section__text {
     text-wrap: nowrap;
     display: flex;
     align-items: center;
     width: 100%;
-    font-size: var(--font-title-max);
+    font-size: var(--font-title-mobile);
     font-family: var(--font-serif-light);
     font-weight: 400;
     line-height: 1;
+
+    @media screen and (min-width: 768px) {
+      font-size: var(--font-title-min);
+    }
+
+    @media screen and (min-width: 1200px) {
+      padding-inline: var(--spacing-xl);
+      font-size: var(--font-title-max);
+    }
 
     &:nth-child(even) {
       flex-direction: row-reverse;
@@ -334,9 +359,9 @@ blockquote{
   }
 }
 
-  .title-section--no-spacing {
-    padding-inline: 0;
-  }
+.title-section--no-spacing {
+  padding-inline: 0;
+}
 
 .header {
   display: flex;
@@ -346,10 +371,18 @@ blockquote{
   padding: var(--spacing-base);
 
   & .header__logo {
-    font-size: var(--title-max);
+    font-size: var(--font-title-mobile);
     font-family: var(--font-serif-light);
     line-height: 0.8;
     text-transform: lowercase;
+
+    @media screen and (min-width: 768px) {
+      font-size: var(--font-title-min);
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: var(--font-title-max);
+    }
   }
   & .header__text {
     margin-top: var(--spacing-base);
@@ -361,9 +394,13 @@ blockquote{
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  gap: var(--spacing-xl);
+ gap: var(--spacing-base);
   min-height: 100vh;
   height: 100%;
+
+  @media screen and (min-width: 1200px) {
+    gap: var(--spacing-xl);
+  }
 }
 
 .hero {
@@ -424,20 +461,27 @@ blockquote{
 
 .testimonials-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   padding-inline: var(--spacing-xl);
   margin-top: 10rem;
   width: 100%;
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .info-card {
     margin-top: var(--spacing-xl);
   }
 }
 
-.testimonials-wrapper{
+.testimonials-wrapper {
   overflow-x: hidden;
   width: 100%;
-  grid-column: span 2;
+
+  @media screen and (min-width: 1200px) {
+    grid-column: span 2;
+  }
 }
 .testimonials {
   display: flex;
@@ -548,13 +592,23 @@ body {
 }
 
 .container {
-  padding: 4rem;
+  padding: 1rem;
   max-width: 1500px;
   margin-inline: auto;
+
+
+  @media screen and (min-width: 1200px) {
+    padding: 4rem;
+  }
 }
 
-.content{
-  padding-inline: 2rem;
+.content {
+  padding-inline: 1rem;
   padding-block: 0;
+
+
+  @media screen and (min-width: 1200px) {
+    padding-inline: 2rem;
+  }
 }
 

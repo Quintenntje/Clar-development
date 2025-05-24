@@ -6,10 +6,18 @@
   padding: var(--spacing-base);
 
   & .header__logo {
-    font-size: var(--title-max);
+    font-size: var(--font-title-mobile);
     font-family: var(--font-serif-light);
     line-height: 0.8;
     text-transform: lowercase;
+
+    @media screen and (min-width: 768px) {
+      font-size: var(--font-title-min);
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: var(--font-title-max);
+    }
   }
   & .header__text {
     margin-top: var(--spacing-base);

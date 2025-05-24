@@ -10137,11 +10137,13 @@ function initTitleFadeInAnimation() {
         scrollTrigger: {
           trigger: $title,
           start: "top 80%",
+          end: "top 30%",
           toggleActions: "play none none reverse"
         },
         opacity: 0,
         y: 20,
         skewX: 10,
+        duration: 0.5,
         delay: delay
       });
     });

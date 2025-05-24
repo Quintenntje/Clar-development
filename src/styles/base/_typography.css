@@ -15,13 +15,12 @@ h1 {
   margin-bottom: 0.5em;
 }
 
-.subtitle{
+.subtitle {
   font-size: var(--subtitle);
 }
 
-blockquote{
+blockquote {
   font-size: var(--font-subtitle);
-  
 }
 
 @media (min-width: 768px) {
