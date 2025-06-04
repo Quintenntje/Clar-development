@@ -9856,10 +9856,9 @@ function initHorizontalScrollAnimation() {
         pin: true,
         start: "top top",
         end: function end() {
-          return "+=".concat($container.scrollWidth);
+          return "+=".concat($container.scrollWidth - 1700);
         },
         invalidateOnRefresh: true,
-        anticipatePin: 1,
         onLeaveBack: function onLeaveBack() {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
             backgroundColor: white
