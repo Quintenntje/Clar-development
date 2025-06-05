@@ -30,7 +30,7 @@ export default function initHorizontalScrollAnimation() {
     const white = "#f8f6f1";
 
     const ContainerMovement = gsap.to($container, {
-      x: () => `-${$container.scrollWidth}`,
+      x: () => `-${$container.scrollWidth + $container.offsetWidth}px`,
       scrollTrigger: {
         trigger: $container.parentElement,
         scrub: true,
@@ -69,6 +69,18 @@ export default function initHorizontalScrollAnimation() {
             gsap.to($item, {
               opacity: 1,
             });
+          },  
+
+          onEnter: (self) => {
+            gsap.to($item, {
+              opacity: 0,
+            });
+          },
+
+          onEnterBack: (self) => {
+            gsap.to($item, {
+              opacity: 1,
+            });
           },
 
           onUpdate: (self) => {
@@ -85,11 +97,7 @@ export default function initHorizontalScrollAnimation() {
             });
 
             gsap.to($mouseball, {
-              backgroundColor: $item.getAttribute("data-color-mouse"),
-            });
-
-            gsap.to($item, {
-              opacity: 0,
+              backgroundColor: $item.getAttribute("data-mouse-color"),
             });
           },
         },
