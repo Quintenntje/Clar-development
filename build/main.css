@@ -331,6 +331,7 @@ blockquote {
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
 
   .title-section__text {
     text-wrap: nowrap;
@@ -341,6 +342,8 @@ blockquote {
     font-family: var(--font-serif-light);
     font-weight: 400;
     line-height: 1;
+    transform: translateY(140px) rotate(5deg);
+    clip-path: inset(0 0 100% 0);
 
     @media screen and (min-width: 768px) {
       font-size: var(--font-title-min);
@@ -641,7 +644,7 @@ body {
   padding-block: 0;
 
   @media screen and (min-width: 1200px) {
-    padding-inline: 2rem;
+    padding-inline: 1rem;
   }
 }
 

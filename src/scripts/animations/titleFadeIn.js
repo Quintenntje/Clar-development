@@ -11,9 +11,9 @@ export default function initTitleFadeInAnimation() {
     );
 
     $titleText.forEach(($text, index) => {
-      const delay = index + 0.05;
+      const delay = index * 0.2;
 
-      gsap.from($text, {
+      gsap.to($text, {
         scrollTrigger: {
           trigger: $title,
           start: "top 80%",
@@ -21,9 +21,9 @@ export default function initTitleFadeInAnimation() {
           toggleActions: "play none none reverse",
         },
 
-        opacity: 0,
-        y: 20,
-        skewX: 10,
+        y: 0,
+        clipPath: "inset(0% 0% 0% 0%)",
+        rotation: 0,
         duration: 0.5,
         delay: delay,
       });

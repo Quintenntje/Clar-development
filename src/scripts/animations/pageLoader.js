@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { mouseEnterAnimation } from "./mouse.js";
+import initTitleFadeInAnimation from "./titleFadeIn.js";
 
 const $wrapper = document.querySelector("[data-animation='loader']");
 const $logo = document.querySelector("[data-animation-child='logo']");
@@ -39,7 +40,11 @@ function initPageLoaderAnimation() {
 
   masterTimeline
     .add(logoTimeline($logo))
-    .add(wrapperTimeline($wrapper).add(mouseEnterAnimation, "<+.5"));
+    .add(
+      wrapperTimeline($wrapper)
+        .add(mouseEnterAnimation, "<+.1")
+        .add(initTitleFadeInAnimation )
+    );
 }
 
 export default initPageLoaderAnimation;

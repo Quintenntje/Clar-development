@@ -35,6 +35,6 @@ body {
   padding-block: 0;
 
   @media screen and (min-width: 1200px) {
-    padding-inline: 2rem;
+    padding-inline: 1rem;
   }
 }
