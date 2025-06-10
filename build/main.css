@@ -253,6 +253,7 @@ blockquote {
     width: var(--spacing-lg);
     aspect-ratio: 1;
     background-color: var(--blue);
+
     border-radius: 99%;
 
     @media screen and (pointer: coarse) {
@@ -315,7 +316,7 @@ blockquote {
   position: relative;
   z-index: 1000;
   background-color: var(--background-color);
-  height: 300px;
+  height: 350px;
 
   @media screen and (min-width: 768px) {
     font-size: var(--font-display-min);
@@ -497,13 +498,21 @@ blockquote {
 }
 
 .testimonials-wrapper {
+  position: relative;
+  z-index: 10000;
   overflow-x: hidden;
   width: 100%;
+  grid-column: 2;
 
   @media screen and (min-width: 1200px) {
-    grid-column: span 2;
+    display: grid;
+    align-items: center;
+    height: 80vh;
+
+    padding-left: 30rem;
   }
 }
+
 .testimonials {
   display: flex;
   flex-wrap: nowrap;
@@ -613,13 +622,14 @@ blockquote {
 
 body {
   text-transform: uppercase;
+  overflow-x: hidden;
+  background-color: var(--background-color  );
 }
 
 .container {
   padding: 1rem;
   max-width: 1500px;
   margin-inline: auto;
-
 
   @media screen and (min-width: 1200px) {
     padding: 4rem;
@@ -629,7 +639,6 @@ body {
 .content {
   padding-inline: 1rem;
   padding-block: 0;
-
 
   @media screen and (min-width: 1200px) {
     padding-inline: 2rem;

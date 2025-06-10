@@ -11,13 +11,13 @@ export default function initTitleFadeInAnimation() {
     );
 
     $titleText.forEach(($text, index) => {
-      const delay = index * 0.5;
+      const delay = index + 0.05;
 
       gsap.from($text, {
         scrollTrigger: {
           trigger: $title,
           start: "top 80%",
-          end: "top 30%",
+          end: "center 80%",
           toggleActions: "play none none reverse",
         },
 

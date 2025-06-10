@@ -8,9 +8,6 @@ const $mouseContainer = document.querySelector("[data-animation='mouse']");
 const $mouseball = $mouseContainer.querySelector(
   "[data-animation-child='ball']"
 );
-const $mouseballImage = $mouseContainer.querySelector(
-  "[data-animation-child='image']"
-);
 
 const $horizontalScrollTitle = document.querySelector(
   '[data-animation="horizontal-scroll-title"]'
@@ -35,8 +32,9 @@ export default function initHorizontalScrollAnimation() {
         trigger: $container.parentElement,
         scrub: true,
         pin: true,
+        anticipatePin: 1,
         start: "top top",
-        end: () => `+=${$container.scrollWidth - 1700}`,
+        end: () => `+=${$container.scrollHeight}`,
         invalidateOnRefresh: true,
 
         onLeaveBack: () => {
@@ -69,7 +67,7 @@ export default function initHorizontalScrollAnimation() {
             gsap.to($item, {
               opacity: 1,
             });
-          },  
+          },
 
           onEnter: (self) => {
             gsap.to($item, {

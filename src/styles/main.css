@@ -16,13 +16,14 @@
 
 body {
   text-transform: uppercase;
+  overflow-x: hidden;
+  background-color: var(--background-color  );
 }
 
 .container {
   padding: 1rem;
   max-width: 1500px;
   margin-inline: auto;
-
 
   @media screen and (min-width: 1200px) {
     padding: 4rem;
@@ -32,7 +33,6 @@ body {
 .content {
   padding-inline: 1rem;
   padding-block: 0;
-
 
   @media screen and (min-width: 1200px) {
     padding-inline: 2rem;

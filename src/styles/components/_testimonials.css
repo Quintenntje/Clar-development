@@ -1,11 +1,19 @@
 .testimonials-wrapper {
+  position: relative;
+  z-index: 10000;
   overflow-x: hidden;
   width: 100%;
+  grid-column: 2;
 
   @media screen and (min-width: 1200px) {
-    grid-column: span 2;
+    display: grid;
+    align-items: center;
+    height: 80vh;
+
+    padding-left: 30rem;
   }
 }
+
 .testimonials {
   display: flex;
   flex-wrap: nowrap;

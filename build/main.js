@@ -9838,7 +9838,6 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 var $body = document.querySelector("body");
 var $mouseContainer = document.querySelector("[data-animation='mouse']");
 var $mouseball = $mouseContainer.querySelector("[data-animation-child='ball']");
-var $mouseballImage = $mouseContainer.querySelector("[data-animation-child='image']");
 var $horizontalScrollTitle = document.querySelector('[data-animation="horizontal-scroll-title"]');
 function initHorizontalScrollAnimation() {
   var $scrollContainer = document.querySelectorAll('[data-animation="horizontal-scroll"]');
@@ -9848,15 +9847,16 @@ function initHorizontalScrollAnimation() {
     var white = "#f8f6f1";
     var ContainerMovement = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
       x: function x() {
-        return "-".concat($container.scrollWidth);
+        return "-".concat($container.scrollWidth + $container.offsetWidth, "px");
       },
       scrollTrigger: {
         trigger: $container.parentElement,
         scrub: true,
         pin: true,
+        anticipatePin: 1,
         start: "top top",
         end: function end() {
-          return "+=".concat($container.scrollWidth - 1700);
+          return "+=".concat($container.scrollHeight);
         },
         invalidateOnRefresh: true,
         onLeaveBack: function onLeaveBack() {
@@ -9887,6 +9887,16 @@ function initHorizontalScrollAnimation() {
               opacity: 1
             });
           },
+          onEnter: function onEnter(self) {
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+              opacity: 0
+            });
+          },
+          onEnterBack: function onEnterBack(self) {
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+              opacity: 1
+            });
+          },
           onUpdate: function onUpdate(self) {
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
               backgroundColor: $item.getAttribute("data-color-bg")
@@ -9899,10 +9909,7 @@ function initHorizontalScrollAnimation() {
               color: $item.getAttribute("data-color-text")
             });
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
-              backgroundColor: $item.getAttribute("data-color-mouse")
-            });
-            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-              opacity: 0
+              backgroundColor: $item.getAttribute("data-mouse-color")
             });
           }
         }
@@ -10177,12 +10184,12 @@ function initTitleFadeInAnimation() {
   $titles.forEach(function ($title) {
     var $titleText = $title.querySelectorAll("[data-animation-child='title-fade-in']");
     $titleText.forEach(function ($text, index) {
-      var delay = index * 0.5;
+      var delay = index + 0.05;
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($text, {
         scrollTrigger: {
           trigger: $title,
           start: "top 80%",
-          end: "top 30%",
+          end: "center 80%",
           toggleActions: "play none none reverse"
         },
         opacity: 0,
