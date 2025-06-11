@@ -19,61 +19,39 @@ export default function initTitleFadeInAnimation() {
       first.forEach(($text, index) => {
         const delay = 0.2;
 
-        gsap.to($text, {
-          scrollTrigger: {
-            trigger: $title,
-            start: "top 80%",
-            end: "center 80%",
-            toggleActions: "play none none reset",
-          },
-
-          y: 0,
-          clipPath: "inset(0% 0% 0% 0%)",
-          rotation: 0,
-          duration: 0.5,
-          delay: delay,
-        });
+        textAnimation($text, delay);
       });
 
       second.forEach(($text, index) => {
         const delay = 0.2 + 0.75;
 
-        gsap.to($text, {
-          scrollTrigger: {
-            trigger: $title,
-            start: "top 80%",
-            end: "center 80%",
-            toggleActions: "play none none reset",
-          },
-
-          y: 0,
-          clipPath: "inset(0% 0% 0% 0%)",
-          rotation: 0,
-          duration: 0.5,
-          delay: delay,
-        });
+        textAnimation($text, delay);
       });
+
       
     } else {
-
       $titleText.forEach(($text, index) => {
         const delay = index * 0.2;
 
-        gsap.to($text, {
-          scrollTrigger: {
-            trigger: $title,
-            start: "top 80%",
-            end: "center 80%",
-            toggleActions: "play none none reset",
-          },
-
-          y: 0,
-          clipPath: "inset(0% 0% 0% 0%)",
-          rotation: 0,
-          duration: 0.5,
-          delay: delay,
-        });
+        textAnimation($text, delay);
       });
     }
   });
+
+  function textAnimation($text, delay) {
+    gsap.to($text, {
+      scrollTrigger: {
+        trigger: $text,
+        start: "top 80%",
+        end: "center 80%",
+        toggleActions: "play none none reset",
+      },
+
+      y: 0,
+      clipPath: "inset(0% 0% 0% 0%)",
+      rotation: 0,
+      duration: 0.5,
+      delay: delay,
+    });
+  }
 }

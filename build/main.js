@@ -10191,55 +10191,34 @@ function initTitleFadeInAnimation() {
       var second = titleTextArray.slice(2, 4);
       first.forEach(function ($text, index) {
         var delay = 0.2;
-        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
-          scrollTrigger: {
-            trigger: $title,
-            start: "top 80%",
-            end: "center 80%",
-            toggleActions: "play none none reset"
-          },
-          y: 0,
-          clipPath: "inset(0% 0% 0% 0%)",
-          rotation: 0,
-          duration: 0.5,
-          delay: delay
-        });
+        textAnimation($text, delay);
       });
       second.forEach(function ($text, index) {
         var delay = 0.2 + 0.75;
-        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
-          scrollTrigger: {
-            trigger: $title,
-            start: "top 80%",
-            end: "center 80%",
-            toggleActions: "play none none reset"
-          },
-          y: 0,
-          clipPath: "inset(0% 0% 0% 0%)",
-          rotation: 0,
-          duration: 0.5,
-          delay: delay
-        });
+        textAnimation($text, delay);
       });
     } else {
       $titleText.forEach(function ($text, index) {
         var delay = index * 0.2;
-        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
-          scrollTrigger: {
-            trigger: $title,
-            start: "top 80%",
-            end: "center 80%",
-            toggleActions: "play none none reset"
-          },
-          y: 0,
-          clipPath: "inset(0% 0% 0% 0%)",
-          rotation: 0,
-          duration: 0.5,
-          delay: delay
-        });
+        textAnimation($text, delay);
       });
     }
   });
+  function textAnimation($text, delay) {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
+      scrollTrigger: {
+        trigger: $text,
+        start: "top 80%",
+        end: "center 80%",
+        toggleActions: "play none none reset"
+      },
+      y: 0,
+      clipPath: "inset(0% 0% 0% 0%)",
+      rotation: 0,
+      duration: 0.5,
+      delay: delay
+    });
+  }
 }
 
 /***/ }),
