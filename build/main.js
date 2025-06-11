@@ -10185,22 +10185,60 @@ function initTitleFadeInAnimation() {
   var $titles = document.querySelectorAll("[data-animation='title-fade-in']");
   $titles.forEach(function ($title) {
     var $titleText = $title.querySelectorAll("[data-animation-child='title-fade-in']");
-    $titleText.forEach(function ($text, index) {
-      var delay = index * 0.2;
-      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
-        scrollTrigger: {
-          trigger: $title,
-          start: "top 80%",
-          end: "center 80%",
-          toggleActions: "play none none reverse"
-        },
-        y: 0,
-        clipPath: "inset(0% 0% 0% 0%)",
-        rotation: 0,
-        duration: 0.5,
-        delay: delay
+    if ($titleText.length === 4) {
+      var titleTextArray = Array.from($titleText);
+      var first = titleTextArray.slice(0, 2);
+      var second = titleTextArray.slice(2, 4);
+      first.forEach(function ($text, index) {
+        var delay = 0.2;
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
+          scrollTrigger: {
+            trigger: $title,
+            start: "top 80%",
+            end: "center 80%",
+            toggleActions: "play none none reset"
+          },
+          y: 0,
+          clipPath: "inset(0% 0% 0% 0%)",
+          rotation: 0,
+          duration: 0.5,
+          delay: delay
+        });
       });
-    });
+      second.forEach(function ($text, index) {
+        var delay = 0.2 + 0.75;
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
+          scrollTrigger: {
+            trigger: $title,
+            start: "top 80%",
+            end: "center 80%",
+            toggleActions: "play none none reset"
+          },
+          y: 0,
+          clipPath: "inset(0% 0% 0% 0%)",
+          rotation: 0,
+          duration: 0.5,
+          delay: delay
+        });
+      });
+    } else {
+      $titleText.forEach(function ($text, index) {
+        var delay = index * 0.2;
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
+          scrollTrigger: {
+            trigger: $title,
+            start: "top 80%",
+            end: "center 80%",
+            toggleActions: "play none none reset"
+          },
+          y: 0,
+          clipPath: "inset(0% 0% 0% 0%)",
+          rotation: 0,
+          duration: 0.5,
+          delay: delay
+        });
+      });
+    }
   });
 }
 

@@ -10,23 +10,70 @@ export default function initTitleFadeInAnimation() {
       "[data-animation-child='title-fade-in']"
     );
 
-    $titleText.forEach(($text, index) => {
-      const delay = index * 0.2;
+    if ($titleText.length === 4) {
+      const titleTextArray = Array.from($titleText);
 
-      gsap.to($text, {
-        scrollTrigger: {
-          trigger: $title,
-          start: "top 80%",
-          end: "center 80%",
-          toggleActions: "play none none reverse",
-        },
+      const first = titleTextArray.slice(0, 2);
+      const second = titleTextArray.slice(2, 4);
 
-        y: 0,
-        clipPath: "inset(0% 0% 0% 0%)",
-        rotation: 0,
-        duration: 0.5,
-        delay: delay,
+      first.forEach(($text, index) => {
+        const delay = 0.2;
+
+        gsap.to($text, {
+          scrollTrigger: {
+            trigger: $title,
+            start: "top 80%",
+            end: "center 80%",
+            toggleActions: "play none none reset",
+          },
+
+          y: 0,
+          clipPath: "inset(0% 0% 0% 0%)",
+          rotation: 0,
+          duration: 0.5,
+          delay: delay,
+        });
       });
-    });
+
+      second.forEach(($text, index) => {
+        const delay = 0.2 + 0.75;
+
+        gsap.to($text, {
+          scrollTrigger: {
+            trigger: $title,
+            start: "top 80%",
+            end: "center 80%",
+            toggleActions: "play none none reset",
+          },
+
+          y: 0,
+          clipPath: "inset(0% 0% 0% 0%)",
+          rotation: 0,
+          duration: 0.5,
+          delay: delay,
+        });
+      });
+      
+    } else {
+
+      $titleText.forEach(($text, index) => {
+        const delay = index * 0.2;
+
+        gsap.to($text, {
+          scrollTrigger: {
+            trigger: $title,
+            start: "top 80%",
+            end: "center 80%",
+            toggleActions: "play none none reset",
+          },
+
+          y: 0,
+          clipPath: "inset(0% 0% 0% 0%)",
+          rotation: 0,
+          duration: 0.5,
+          delay: delay,
+        });
+      });
+    }
   });
 }
