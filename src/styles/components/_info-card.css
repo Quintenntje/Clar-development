@@ -34,6 +34,24 @@
   }
 }
 
+.info-card--small {
+  max-width: 300px;
+}
+
+.info-card--larger {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    min-width: 400px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+    min-width: 500px;
+  }
+}
+
 .info-card--white {
   .info-card__title {
     border-color: var(--background-color);
