@@ -7,15 +7,12 @@ export default function initGrowAnimation() {
   $growParent.forEach(($parent) => {
     const $children = $parent.querySelectorAll('[data-animation-child="grow"]');
 
-    const fadeInTimeline = gsap.timeline({
+    gsap.from($children, {
       scrollTrigger: {
         trigger: $parent,
-       start: "top 100%",
+        start: "top 100%",
         toggleActions: "play reset play reverse",
       },
-    });
-
-    fadeInTimeline.from($children, {
       scale: 0,
       duration: 1,
       stagger: {
