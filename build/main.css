@@ -465,7 +465,10 @@ blockquote {
 }
 
 .info-card--small {
-  max-width: 300px;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 .info-card--larger {
@@ -632,6 +635,7 @@ blockquote {
     height: 100%;
     max-width: 60rem;
     cursor: pointer;
+    position: relative;
 
     gap: var(--spacing-xl);
 
@@ -658,6 +662,11 @@ blockquote {
       font-size: var(--font-subtitle);
     }
   }
+}
+
+.link--full {
+  position: absolute;
+  inset: 0;
 }
 
 body {

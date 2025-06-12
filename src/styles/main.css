@@ -13,6 +13,7 @@
 @import url("./layouts/_section.css");
 @import url("./components/_team.css");
 @import url("./layouts/_contact.css");
+@import url("./components/_link.css");
 
 body {
   text-transform: uppercase;
