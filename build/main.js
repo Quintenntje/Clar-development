@@ -9729,7 +9729,6 @@ function initFadeInAnimation() {
       scrollTrigger: {
         trigger: $el,
         start: "top 80%",
-        end: "top 30%",
         toggleActions: "play reset play reverse"
       }
     });
