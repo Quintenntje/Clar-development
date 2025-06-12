@@ -12,16 +12,17 @@ export default function initGrowAnimation() {
         trigger: $parent,
         start: "top 80%",
         end: "top 30%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none reverse reverse",
       },
     });
 
     fadeInTimeline.from($children, {
-      scale: 0.5,
-      stagger:{
-        amount: 0.2,
+      scale: 0,
+      duration: 1,
+      stagger: {
+        amount: 1,
         from: "end",
-      }
+      },
     });
   });
 }
