@@ -10191,23 +10191,23 @@ function initTitleFadeInAnimation() {
       var second = titleTextArray.slice(2, 4);
       first.forEach(function ($text, index) {
         var delay = 0.2;
-        textAnimation($text, delay);
+        textAnimation($text, $title, delay);
       });
       second.forEach(function ($text, index) {
         var delay = 0.2 + 0.75;
-        textAnimation($text, delay);
+        textAnimation($text, $title, delay);
       });
     } else {
       $titleText.forEach(function ($text, index) {
         var delay = index * 0.2;
-        textAnimation($text, delay);
+        textAnimation($text, $title, delay);
       });
     }
   });
-  function textAnimation($text, delay) {
+  function textAnimation($text, $title, delay) {
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
       scrollTrigger: {
-        trigger: $text,
+        trigger: $title,
         start: "top 80%",
         end: "center 80%",
         toggleActions: "play none none reset"
