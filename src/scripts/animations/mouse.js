@@ -66,10 +66,13 @@ function changeMouseBallColor() {
 function changeMouseToImage() {
   const $mouseImage = document.querySelectorAll("[data-mouse-image]");
 
+  let blendModeTimeOut = null;
   $mouseImage.forEach(($image) => {
     const image = $image.dataset.mouseImage;
 
     $image.addEventListener("mouseover", () => {
+      clearTimeout(blendModeTimeOut);
+      $mouseContainer.style.mixBlendMode = "normal";
       gsap.to($mouseballImage, {
         backgroundImage: `url(../../assets/${image})`,
         duration: 0.5,
@@ -78,9 +81,12 @@ function changeMouseToImage() {
     });
 
     $image.addEventListener("mouseleave", () => {
+      blendModeTimeOut = setTimeout(() => {
+        $mouseContainer.style.mixBlendMode = "difference";
+      }, 500);
       gsap.to($mouseballImage, {
         scale: 0,
-        backgroundImage: `url(../../assets/${image}`,
+        backgroundImage: `url(../../assets/${image})`,
         duration: 0.5,
       });
     });
