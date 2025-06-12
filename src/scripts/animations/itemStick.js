@@ -17,8 +17,8 @@ export default function initTitleStickAnimation() {
 }
 
 function stickAnimation($container, $child) {
-  const containerHeight = $container.offsetHeight;
-  const childHeight = $child.offsetHeight;
+  const containerHeight = $container.getBoundingClientRect().height;
+  const childHeight = $child.getBoundingClientRect().height;
 
   const scrollDistance = containerHeight - childHeight;
 
@@ -26,8 +26,8 @@ function stickAnimation($container, $child) {
     scrollTrigger: {
       trigger: $container,
       start: "top top",
-      end: `+=${scrollDistance}`,
-      scrub: true,
+      end: "bottom top",
+      scrub: 1,
     },
   });
 

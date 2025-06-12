@@ -310,8 +310,11 @@ blockquote {
   display: flex;
   justify-content: end;
   font-size: var(--font-title-min);
+  font-family: var(--font-serif), serif;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+  font-weight: normal;
+  line-height: 1;
   color: var(--blue);
   position: relative;
   z-index: 1000;
@@ -467,7 +470,7 @@ blockquote {
 .info-card--small {
   @media screen and (min-width: 768px) {
     width: 100%;
-    max-width: 300px;
+    max-width: 325px;
   }
 }
 

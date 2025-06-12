@@ -1,7 +1,6 @@
 import initMouseAnimation from "./animations/mouse";
 import initPageLoaderAnimation from "./animations/pageLoader";
 import initTitleStickAnimation from "./animations/itemStick";
-import initTitleFadeInAnimation from "./animations/titleFadeIn";
 import initFadeInAnimation from "./animations/fadeIn";
 import initHorizontalScrollAnimation from "./animations/horizontalScroll";
 import initFadeInListItemsAnimation from "./animations/fadeInListItems";
