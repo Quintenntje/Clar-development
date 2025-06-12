@@ -21,3 +21,9 @@
     margin-top: var(--spacing-xl);
   }
 }
+
+.grid-container--gap-large {
+  @media screen and (min-width: 768px) {
+    gap: var(--spacing-xl);
+  }
+}

@@ -518,6 +518,12 @@ blockquote {
   }
 }
 
+.grid-container--gap-large {
+  @media screen and (min-width: 768px) {
+    gap: var(--spacing-xl);
+  }
+}
+
 .testimonials-wrapper {
   position: relative;
   z-index: 10000;
