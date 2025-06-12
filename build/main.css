@@ -630,7 +630,8 @@ blockquote {
     justify-content: center;
     width: 100%;
     height: 100%;
-    max-width: 120rem;
+    max-width: 60rem;
+    cursor: pointer;
 
     gap: var(--spacing-xl);
 
