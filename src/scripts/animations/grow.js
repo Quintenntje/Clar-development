@@ -20,7 +20,7 @@ export default function initGrowAnimation() {
       scale: 0,
       duration: 1,
       stagger: {
-        amount: 1,
+        amount: 0.5,
         from: "end",
       },
     });
