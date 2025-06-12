@@ -11,7 +11,7 @@ export default function initFadeInAnimation() {
         trigger: $el,
         start: "top 80%",
         end: "top 30%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play reset play reverse",
       },
     });
 

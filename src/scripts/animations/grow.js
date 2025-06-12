@@ -11,8 +11,7 @@ export default function initGrowAnimation() {
       scrollTrigger: {
         trigger: $parent,
         start: "top 80%",
-        end: "top 30%",
-        toggleActions: "play none reverse reverse",
+        toggleActions: "play reset play reverse",
       },
     });
 

@@ -28,7 +28,6 @@ function stickAnimation($container, $child) {
       start: "top top",
       end: `+=${scrollDistance}`,
       scrub: true,
-      
     },
   });
 

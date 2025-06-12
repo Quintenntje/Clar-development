@@ -17,8 +17,7 @@ export default function initFadeInListItemsAnimation() {
         scrollTrigger: {
           trigger: $item,
           start: "top 80%",
-          end: "top 30%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play reset play reverse",
         },
       });
 

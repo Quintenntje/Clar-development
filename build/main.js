@@ -9730,7 +9730,7 @@ function initFadeInAnimation() {
         trigger: $el,
         start: "top 80%",
         end: "top 30%",
-        toggleActions: "play none none reverse"
+        toggleActions: "play reset play reverse"
       }
     });
     fadeInTimeline.from($el, {
@@ -9766,8 +9766,7 @@ function initFadeInListItemsAnimation() {
         scrollTrigger: {
           trigger: $item,
           start: "top 80%",
-          end: "top 30%",
-          toggleActions: "play none none reverse"
+          toggleActions: "play reset play reverse"
         }
       });
       fadeInTimeline.from($el, {
@@ -9804,15 +9803,14 @@ function initGrowAnimation() {
       scrollTrigger: {
         trigger: $parent,
         start: "top 80%",
-        end: "top 30%",
-        toggleActions: "play none reverse reverse"
+        toggleActions: "play reset play reverse"
       }
     });
     fadeInTimeline.from($children, {
       scale: 0,
       duration: 1,
       stagger: {
-        amount: 1,
+        amount: 0.5,
         from: "end"
       }
     });
@@ -9882,8 +9880,8 @@ function initHorizontalScrollAnimation() {
         scrollTrigger: {
           trigger: $item,
           markers: true,
-          start: "left 53%",
-          end: "right 100%",
+          start: "left 20%",
+          end: "right 30%",
           containerAnimation: ContainerMovement,
           onLeaveBack: function onLeaveBack(self) {
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
@@ -10215,8 +10213,7 @@ function initTitleFadeInAnimation() {
       scrollTrigger: {
         trigger: $title,
         start: "top 80%",
-        end: "center 80%",
-        toggleActions: "play none restart reset"
+        toggleActions: "play reset play reset"
       },
       y: 0,
       clipPath: "inset(0% 0% 0% 0%)",
