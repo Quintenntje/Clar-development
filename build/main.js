@@ -9805,13 +9805,14 @@ function initGrowAnimation() {
         trigger: $parent,
         start: "top 80%",
         end: "top 30%",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none reverse reverse"
       }
     });
     fadeInTimeline.from($children, {
-      scale: 0.5,
+      scale: 0,
+      duration: 1,
       stagger: {
-        amount: 0.2,
+        amount: 1,
         from: "end"
       }
     });
@@ -9880,7 +9881,9 @@ function initHorizontalScrollAnimation() {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
         scrollTrigger: {
           trigger: $item,
-          start: "0 50%",
+          markers: true,
+          start: "left 53%",
+          end: "right 100%",
           containerAnimation: ContainerMovement,
           onLeaveBack: function onLeaveBack(self) {
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
@@ -10144,21 +10147,24 @@ __webpack_require__.r(__webpack_exports__);
 
 function initShrinkAnimation() {
   var $shrinkElements = document.querySelectorAll('[data-animation="shrink"]');
-  $shrinkElements.forEach(function ($el) {
-    $el.addEventListener("mouseenter", function () {
-      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($el, {
-        scale: 0.8,
-        rotation: 15,
-        duration: 0.5,
-        ease: "back.in(2)"
+  $shrinkElements.forEach(function ($shrinkElementChild) {
+    var $childElements = $shrinkElementChild.querySelectorAll('[data-animation-child="shrink"]');
+    $childElements.forEach(function ($el) {
+      $shrinkElementChild.addEventListener("mouseenter", function () {
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($el, {
+          scale: 0.8,
+          rotation: 15,
+          duration: 0.5,
+          ease: "back.in(2)"
+        });
       });
-    });
-    $el.addEventListener("mouseleave", function () {
-      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($el, {
-        scale: 1,
-        rotation: 0,
-        duration: 0.5,
-        ease: "back.out(2)"
+      $shrinkElementChild.addEventListener("mouseleave", function () {
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($el, {
+          scale: 1,
+          rotation: 0,
+          duration: 0.5,
+          ease: "back.out(2)"
+        });
       });
     });
   });
@@ -10210,7 +10216,7 @@ function initTitleFadeInAnimation() {
         trigger: $title,
         start: "top 80%",
         end: "center 80%",
-        toggleActions: "play none none reset"
+        toggleActions: "play none restart reset"
       },
       y: 0,
       clipPath: "inset(0% 0% 0% 0%)",

@@ -474,14 +474,16 @@
       >
         <div class="container">
           <div class="contact">
-            <h2 class="contact__title">Do you like what you see?</h2>
-            <a
-              data-animation="shrink"
-              data-mouse-color="#a2543d"
-              class="contact__link"
-              href="mailto:info@clar.be"
-              >Contact</a
-            >
+            <div data-animation="shrink" class="contact__wrapper">
+              <h2 class="contact__wrapper__title">Do you like what you see?</h2>
+              <a
+                data-animation-child="shrink"
+                data-mouse-color="#a2543d"
+                class="contact__wrapper__link"
+                href="mailto:info@clar.be"
+                >Contact</a
+              >
+            </div>
           </div>
         </div>
       </section>

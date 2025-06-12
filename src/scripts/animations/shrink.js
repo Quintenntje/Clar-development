@@ -4,22 +4,28 @@ export default function initShrinkAnimation() {
     '[data-animation="shrink"]'
   );
 
-  $shrinkElements.forEach(($el) => {
-    $el.addEventListener("mouseenter", () => {
-      gsap.to($el, {
-        scale: 0.8,
-        rotation: 15,
-        duration: 0.5,
-        ease: "back.in(2)",
-      });
-    });
+  $shrinkElements.forEach(($shrinkElementChild) => {
+    const $childElements = $shrinkElementChild.querySelectorAll(
+      '[data-animation-child="shrink"]'
+    );
 
-    $el.addEventListener("mouseleave", () => {
-      gsap.to($el, {
-        scale: 1,
-        rotation: 0,
-        duration: 0.5,
-           ease: "back.out(2)"
+    $childElements.forEach(($el) => {
+      $shrinkElementChild.addEventListener("mouseenter", () => {
+        gsap.to($el, {
+          scale: 0.8,
+          rotation: 15,
+          duration: 0.5,
+          ease: "back.in(2)",
+        });
+      });
+
+      $shrinkElementChild.addEventListener("mouseleave", () => {
+        gsap.to($el, {
+          scale: 1,
+          rotation: 0,
+          duration: 0.5,
+          ease: "back.out(2)",
+        });
       });
     });
   });
