@@ -10,7 +10,7 @@ export default function initGrowAnimation() {
     const fadeInTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: $parent,
-        start: "top 80%",
+       start: "top 100%",
         toggleActions: "play reset play reverse",
       },
     });

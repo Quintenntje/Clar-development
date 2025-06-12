@@ -9728,7 +9728,7 @@ function initFadeInAnimation() {
     var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
         trigger: $el,
-        start: "top 80%",
+        start: "top 100%",
         toggleActions: "play reset play reverse"
       }
     });
@@ -9764,7 +9764,7 @@ function initFadeInListItemsAnimation() {
       var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
         scrollTrigger: {
           trigger: $item,
-          start: "top 80%",
+          start: "top 100%",
           toggleActions: "play reset play reverse"
         }
       });
@@ -9801,7 +9801,7 @@ function initGrowAnimation() {
     var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
         trigger: $parent,
-        start: "top 80%",
+        start: "top 100%",
         toggleActions: "play reset play reverse"
       }
     });
@@ -10211,7 +10211,7 @@ function initTitleFadeInAnimation() {
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($text, {
       scrollTrigger: {
         trigger: $title,
-        start: "top 80%",
+        start: "top 100%",
         toggleActions: "play reset play reset"
       },
       y: 0,
