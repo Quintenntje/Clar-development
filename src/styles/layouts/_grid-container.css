@@ -1,4 +1,4 @@
-.testimonials-container {
+.grid-container {
   display: grid;
   grid-template-columns: 1fr;
   padding-inline: 0;

@@ -8,7 +8,7 @@
 @import url("./components/_header.css");
 @import url("./layouts/_hero.css");
 @import url("./components/_info-card.css");
-@import url("./layouts/_testimonials-container.css");
+@import url("./layouts/_grid-container.css");
 @import url("./components/_testimonials.css");
 @import url("./layouts/_section.css");
 @import url("./components/_team.css");
@@ -17,7 +17,7 @@
 body {
   text-transform: uppercase;
   overflow-x: hidden;
-  background-color: var(--background-color  );
+  background-color: var(--background-color);
 }
 
 .container {

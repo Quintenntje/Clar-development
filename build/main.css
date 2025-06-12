@@ -464,6 +464,24 @@ blockquote {
   }
 }
 
+.info-card--small {
+  max-width: 300px;
+}
+
+.info-card--larger {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    min-width: 400px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+    min-width: 500px;
+  }
+}
+
 .info-card--white {
   .info-card__title {
     border-color: var(--background-color);
@@ -476,7 +494,7 @@ blockquote {
   }
 }
 
-.testimonials-container {
+.grid-container {
   display: grid;
   grid-template-columns: 1fr;
   padding-inline: 0;
@@ -626,7 +644,7 @@ blockquote {
 body {
   text-transform: uppercase;
   overflow-x: hidden;
-  background-color: var(--background-color  );
+  background-color: var(--background-color);
 }
 
 .container {
