@@ -1,6 +1,6 @@
 .mouse-container {
   position: fixed;
-  z-index: 1001;
+  z-index: -1;
   pointer-events: none;
   mix-blend-mode: difference;
 
@@ -11,7 +11,7 @@
     top: calc((var(--spacing-lg) / 2) * -1);
     width: var(--spacing-lg);
     aspect-ratio: 1;
-    background-color: var(--blue);
+    background-color: var(--yellow);
 
     border-radius: 99%;
 

@@ -20,6 +20,7 @@ export default function initMouseAnimation() {
 
   changeMouseBallColor();
   changeMouseToImage();
+  increaseMouseIndex();
 
   mm.add("(pointer: fine)", () => {
     const quickToX = gsap.quickTo($mouseContainer, "x");
@@ -43,6 +44,28 @@ export default function initMouseAnimation() {
       gsap.to($mouseContainer, {
         scale: 1,
         ease: "power2.inOut",
+      });
+    });
+  });
+}
+
+function increaseMouseIndex() {
+  const $sections = document.querySelectorAll("[data-mouse-increase-index]");
+
+  $sections.forEach(($section) => {
+    const index = $section.dataset.mouseIncreaseIndex;
+
+    $section.addEventListener("mouseover", () => {
+      gsap.to($mouseContainer, {
+        zIndex: index,
+        duration: 0.5,
+      });
+    });
+
+    $section.addEventListener("mouseleave", () => {
+      gsap.to($mouseContainer, {
+        zIndex: -1,
+        duration: 0.5,
       });
     });
   });

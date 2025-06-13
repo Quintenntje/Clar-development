@@ -1,5 +1,7 @@
 .section {
   color: var(--foreground-color);
+  position: relative;
+  z-index: -2;
 }
 
 .section--blue {
@@ -16,14 +18,14 @@
   background-color: var(--orange);
   color: var(--peach);
   position: relative;
-  z-index: 10;
+  z-index: 2;
 }
 
 .section--yellow {
   background-color: var(--yellow);
   color: var(--peach);
-
   overflow: hidden;
+  z-index: 1 !important;
 }
 
 .section--full {
