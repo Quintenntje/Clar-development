@@ -16,7 +16,7 @@ export default function initFadeInListItemsAnimation() {
       const fadeInTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: $item,
-           start: "top 100%",
+          start: "top 100%",
           toggleActions: "play reset play reverse",
         },
       });

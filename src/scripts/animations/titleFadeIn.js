@@ -40,7 +40,7 @@ export default function initTitleFadeInAnimation() {
     gsap.to($text, {
       scrollTrigger: {
         trigger: $title,
-         start: "top 100%",
+        start: "top 100%",
         toggleActions: "play reset play reset",
       },
 

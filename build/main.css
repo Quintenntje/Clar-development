@@ -681,7 +681,13 @@ body {
   background-color: var(--background-color);
 }
 
-h1,h2,h3,p,span,blockquote{
+h1,
+h2,
+h3,
+p,
+span,
+blockquote,
+canvas {
   position: relative;
   z-index: 3;
 }

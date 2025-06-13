@@ -9728,7 +9728,7 @@ function initFadeInAnimation() {
     var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
       scrollTrigger: {
         trigger: $el,
-        start: "top 100%",
+        start: "top 80%",
         toggleActions: "play reset play reverse"
       }
     });
@@ -9798,14 +9798,12 @@ function initGrowAnimation() {
   var $growParent = document.querySelectorAll('[data-animation="grow"]');
   $growParent.forEach(function ($parent) {
     var $children = $parent.querySelectorAll('[data-animation-child="grow"]');
-    var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($children, {
       scrollTrigger: {
         trigger: $parent,
         start: "top 100%",
         toggleActions: "play reset play reverse"
-      }
-    });
-    fadeInTimeline.from($children, {
+      },
       scale: 0,
       duration: 1,
       stagger: {
@@ -9865,7 +9863,6 @@ function initHorizontalScrollAnimation() {
             color: blue
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
-            backgroundColor: white,
             color: blue
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
@@ -9879,8 +9876,9 @@ function initHorizontalScrollAnimation() {
         scrollTrigger: {
           trigger: $item,
           markers: true,
-          start: "left 20%",
-          end: "right 30%",
+          scrub: true,
+          start: "left center",
+          end: "right center",
           containerAnimation: ContainerMovement,
           onLeaveBack: function onLeaveBack(self) {
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
@@ -9905,7 +9903,6 @@ function initHorizontalScrollAnimation() {
               color: $item.getAttribute("data-color-text")
             });
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
-              backgroundColor: $item.getAttribute("data-color-bg"),
               color: $item.getAttribute("data-color-text")
             });
             gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
@@ -9952,7 +9949,7 @@ function stickAnimation($container, $child) {
     scrollTrigger: {
       trigger: $container,
       start: "top top",
-      end: "+=".concat(scrollDistance),
+      end: "bottom top",
       scrub: true
     }
   });
@@ -9989,6 +9986,7 @@ function initMouseAnimation() {
   var mm = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
   changeMouseBallColor();
   changeMouseToImage();
+  increaseMouseIndex();
   mm.add("(pointer: fine)", function () {
     var quickToX = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.quickTo($mouseContainer, "x");
     var quickToY = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.quickTo($mouseContainer, "y");
@@ -10012,6 +10010,24 @@ function initMouseAnimation() {
     });
   });
 }
+function increaseMouseIndex() {
+  var $sections = document.querySelectorAll("[data-mouse-increase-index]");
+  $sections.forEach(function ($section) {
+    var index = $section.dataset.mouseIncreaseIndex;
+    $section.addEventListener("mouseover", function () {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseContainer, {
+        zIndex: index,
+        duration: 0.5
+      });
+    });
+    $section.addEventListener("mouseleave", function () {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseContainer, {
+        zIndex: 2,
+        duration: 0.5
+      });
+    });
+  });
+}
 function changeMouseBallColor() {
   var $sections = document.querySelectorAll("[data-mouse-color]");
   $sections.forEach(function ($section) {
@@ -10026,9 +10042,12 @@ function changeMouseBallColor() {
 }
 function changeMouseToImage() {
   var $mouseImage = document.querySelectorAll("[data-mouse-image]");
+  var blendModeTimeOut = null;
   $mouseImage.forEach(function ($image) {
     var image = $image.dataset.mouseImage;
     $image.addEventListener("mouseover", function () {
+      clearTimeout(blendModeTimeOut);
+      $mouseContainer.style.mixBlendMode = "normal";
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseballImage, {
         backgroundImage: "url(../../assets/".concat(image, ")"),
         duration: 0.5,
@@ -10036,9 +10055,12 @@ function changeMouseToImage() {
       });
     });
     $image.addEventListener("mouseleave", function () {
+      blendModeTimeOut = setTimeout(function () {
+        $mouseContainer.style.mixBlendMode = "difference";
+      }, 500);
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseballImage, {
         scale: 0,
-        backgroundImage: "url(../../assets/".concat(image),
+        backgroundImage: "url(../../assets/".concat(image, ")"),
         duration: 0.5
       });
     });
@@ -10267,15 +10289,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animations_mouse__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations/mouse */ "./src/scripts/animations/mouse.js");
 /* harmony import */ var _animations_pageLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animations/pageLoader */ "./src/scripts/animations/pageLoader.js");
 /* harmony import */ var _animations_itemStick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animations/itemStick */ "./src/scripts/animations/itemStick.js");
-/* harmony import */ var _animations_titleFadeIn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animations/titleFadeIn */ "./src/scripts/animations/titleFadeIn.js");
-/* harmony import */ var _animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/fadeIn */ "./src/scripts/animations/fadeIn.js");
-/* harmony import */ var _animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/horizontalScroll */ "./src/scripts/animations/horizontalScroll.js");
-/* harmony import */ var _animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./animations/fadeInListItems */ "./src/scripts/animations/fadeInListItems.js");
-/* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
-/* harmony import */ var _animations_grow__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animations/grow */ "./src/scripts/animations/grow.js");
-/* harmony import */ var _animations_shrink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./animations/shrink */ "./src/scripts/animations/shrink.js");
-/* harmony import */ var _animations_parallax__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./animations/parallax */ "./src/scripts/animations/parallax.js");
-
+/* harmony import */ var _animations_fadeIn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animations/fadeIn */ "./src/scripts/animations/fadeIn.js");
+/* harmony import */ var _animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./animations/horizontalScroll */ "./src/scripts/animations/horizontalScroll.js");
+/* harmony import */ var _animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animations/fadeInListItems */ "./src/scripts/animations/fadeInListItems.js");
+/* harmony import */ var _lottie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lottie */ "./src/scripts/lottie.js");
+/* harmony import */ var _animations_grow__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./animations/grow */ "./src/scripts/animations/grow.js");
+/* harmony import */ var _animations_shrink__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animations/shrink */ "./src/scripts/animations/shrink.js");
+/* harmony import */ var _animations_parallax__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./animations/parallax */ "./src/scripts/animations/parallax.js");
 
 
 
@@ -10290,13 +10310,13 @@ document.addEventListener("DOMContentLoaded", function () {
   (0,_animations_mouse__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_animations_pageLoader__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_animations_itemStick__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_animations_fadeIn__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  (0,_animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  (0,_animations_grow__WEBPACK_IMPORTED_MODULE_8__["default"])();
-  (0,_animations_shrink__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  (0,_animations_parallax__WEBPACK_IMPORTED_MODULE_10__["default"])();
-  (0,_lottie__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_animations_fadeIn__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_animations_horizontalScroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_animations_fadeInListItems__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_animations_grow__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_animations_shrink__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  (0,_animations_parallax__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  (0,_lottie__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
 
 /***/ }),
