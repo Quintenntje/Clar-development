@@ -45,7 +45,6 @@ export default function initHorizontalScrollAnimation() {
             color: blue,
           });
           gsap.to($horizontalScrollTitle, {
-            backgroundColor: white,
             color: blue,
           });
 
@@ -61,8 +60,9 @@ export default function initHorizontalScrollAnimation() {
         scrollTrigger: {
           trigger: $item,
           markers: true,
-          start: "left 20%",
-          end: "right 30%",
+          scrub: true,
+          start: "left center",
+          end: "right center",
           containerAnimation: ContainerMovement,
 
           onLeaveBack: (self) => {
@@ -92,7 +92,6 @@ export default function initHorizontalScrollAnimation() {
             });
 
             gsap.to($horizontalScrollTitle, {
-              backgroundColor: $item.getAttribute("data-color-bg"),
               color: $item.getAttribute("data-color-text"),
             });
 

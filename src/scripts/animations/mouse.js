@@ -64,7 +64,7 @@ function increaseMouseIndex() {
 
     $section.addEventListener("mouseleave", () => {
       gsap.to($mouseContainer, {
-        zIndex: -1,
+        zIndex: 2,
         duration: 0.5,
       });
     });
