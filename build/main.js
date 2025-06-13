@@ -9805,9 +9805,10 @@ function initGrowAnimation() {
         toggleActions: "play reset play reverse"
       },
       scale: 0,
+      transformOrigin: "center bottom",
       duration: 1,
       stagger: {
-        amount: 0.5,
+        amount: 0,
         from: "end"
       }
     });
