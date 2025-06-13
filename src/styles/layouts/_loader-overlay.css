@@ -17,8 +17,7 @@
     position: relative;
     overflow: hidden;
     .loader-overlay__logo__text {
-      position: absolute;
-      bottom: -200px;
+      transform: translateY(100%);
       font-size: var(--font-title-max);
       font-family: var(--font-serif);
       color: var(--white-cream);

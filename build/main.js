@@ -10099,7 +10099,7 @@ function logoTimeline() {
     ease: "power2.out"
   }).to($logo, {
     delay: 0.25,
-    y: -200,
+    yPercent: -100,
     ease: "power2.out"
   });
   return tl;

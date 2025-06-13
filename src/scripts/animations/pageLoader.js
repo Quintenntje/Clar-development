@@ -17,7 +17,7 @@ function logoTimeline() {
     ease: "power2.out",
   }).to($logo, {
     delay: 0.25,
-    y: -200,
+    yPercent: -100,
     ease: "power2.out",
   });
 
@@ -43,7 +43,7 @@ function initPageLoaderAnimation() {
     .add(
       wrapperTimeline($wrapper)
         .add(mouseEnterAnimation, "<+.1")
-        .add(initTitleFadeInAnimation )
+        .add(initTitleFadeInAnimation)
     );
 }
 

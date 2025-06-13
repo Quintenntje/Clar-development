@@ -9,7 +9,6 @@ import initGrowAnimation from "./animations/grow";
 import initShrinkAnimation from "./animations/shrink";
 import initParallaxEffectAnimation from "./animations/parallax";
 
-
 document.addEventListener("DOMContentLoaded", () => {
   initMouseAnimation();
   initPageLoaderAnimation();
