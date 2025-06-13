@@ -1,7 +1,6 @@
 .section {
   color: var(--foreground-color);
   position: relative;
-  z-index: -2;
 }
 
 .section--blue {

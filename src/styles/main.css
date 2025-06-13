@@ -21,6 +21,11 @@ body {
   background-color: var(--background-color);
 }
 
+h1,h2,h3,p,span,blockquote{
+  position: relative;
+  z-index: 3;
+}
+
 .container {
   padding: 1rem;
   max-width: 1500px;

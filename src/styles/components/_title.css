@@ -8,10 +8,8 @@
   font-weight: normal;
   line-height: 1;
   color: var(--blue);
-  position: relative;
-  z-index: 1000;
-  background-color: var(--background-color);
-  height: 350px;
+  
+  height: 50svh;
 
   @media screen and (min-width: 768px) {
     font-size: var(--font-display-min);
