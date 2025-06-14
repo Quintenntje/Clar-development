@@ -9884,42 +9884,35 @@ function initHorizontalScrollAnimation() {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
             opacity: 1
           });
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
-            backgroundColor: $item.getAttribute("data-color-bg")
-          });
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
-            color: $item.getAttribute("data-color-text")
-          });
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
-            color: $item.getAttribute("data-color-text")
-          });
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
-            backgroundColor: $item.getAttribute("data-mouse-color")
-          });
+          runColorAnimation();
         },
         onEnterBack: function onEnterBack(self) {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
             opacity: 1
           });
+          runColorAnimation();
         },
         onEnter: function onEnter(self) {
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
-            backgroundColor: $item.getAttribute("data-color-bg")
-          });
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
-            color: $item.getAttribute("data-color-text")
-          });
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
-            color: $item.getAttribute("data-color-text")
-          });
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
-            backgroundColor: $item.getAttribute("data-mouse-color")
-          });
+          runColorAnimation();
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
             opacity: 0
           });
         }
       });
+      function runColorAnimation() {
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
+          backgroundColor: $item.getAttribute("data-color-bg")
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
+          color: $item.getAttribute("data-color-text")
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
+          color: $item.getAttribute("data-color-text")
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
+          backgroundColor: $item.getAttribute("data-mouse-color")
+        });
+      }
     });
   });
 }

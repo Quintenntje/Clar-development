@@ -68,48 +68,40 @@ export default function initHorizontalScrollAnimation() {
           gsap.to($item, {
             opacity: 1,
           });
-          gsap.to($body, {
-            backgroundColor: $item.getAttribute("data-color-bg"),
-          });
-          gsap.to($container, {
-            color: $item.getAttribute("data-color-text"),
-          });
-
-          gsap.to($horizontalScrollTitle, {
-            color: $item.getAttribute("data-color-text"),
-          });
-
-          gsap.to($mouseball, {
-            backgroundColor: $item.getAttribute("data-mouse-color"),
-          });
+          runColorAnimation();
         },
 
         onEnterBack: (self) => {
           gsap.to($item, {
             opacity: 1,
           });
+          runColorAnimation();
         },
 
         onEnter: (self) => {
-          gsap.to($body, {
-            backgroundColor: $item.getAttribute("data-color-bg"),
-          });
-          gsap.to($container, {
-            color: $item.getAttribute("data-color-text"),
-          });
-
-          gsap.to($horizontalScrollTitle, {
-            color: $item.getAttribute("data-color-text"),
-          });
-
-          gsap.to($mouseball, {
-            backgroundColor: $item.getAttribute("data-mouse-color"),
-          });
+          runColorAnimation();
           gsap.to($item, {
             opacity: 0,
           });
         },
       });
+
+      function runColorAnimation() {
+        gsap.to($body, {
+          backgroundColor: $item.getAttribute("data-color-bg"),
+        });
+        gsap.to($container, {
+          color: $item.getAttribute("data-color-text"),
+        });
+
+        gsap.to($horizontalScrollTitle, {
+          color: $item.getAttribute("data-color-text"),
+        });
+
+        gsap.to($mouseball, {
+          backgroundColor: $item.getAttribute("data-mouse-color"),
+        });
+      }
     });
   });
 }
