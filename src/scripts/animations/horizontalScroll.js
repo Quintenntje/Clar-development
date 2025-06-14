@@ -71,19 +71,13 @@ export default function initHorizontalScrollAnimation() {
           });
         },
 
-        onEnter: (self) => {
-          gsap.to($item, {
-            opacity: 0,
-          });
-        },
-
         onEnterBack: (self) => {
           gsap.to($item, {
             opacity: 1,
           });
         },
 
-        onUpdate: (self) => {
+        onEnter: (self) => {
           gsap.to($body, {
             backgroundColor: $item.getAttribute("data-color-bg"),
           });
@@ -97,6 +91,9 @@ export default function initHorizontalScrollAnimation() {
 
           gsap.to($mouseball, {
             backgroundColor: $item.getAttribute("data-mouse-color"),
+          });
+          gsap.to($item, {
+            opacity: 0,
           });
         },
       });

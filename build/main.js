@@ -9886,17 +9886,12 @@ function initHorizontalScrollAnimation() {
             opacity: 1
           });
         },
-        onEnter: function onEnter(self) {
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-            opacity: 0
-          });
-        },
         onEnterBack: function onEnterBack(self) {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
             opacity: 1
           });
         },
-        onUpdate: function onUpdate(self) {
+        onEnter: function onEnter(self) {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
             backgroundColor: $item.getAttribute("data-color-bg")
           });
@@ -9908,6 +9903,9 @@ function initHorizontalScrollAnimation() {
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
             backgroundColor: $item.getAttribute("data-mouse-color")
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+            opacity: 0
           });
         }
       });
