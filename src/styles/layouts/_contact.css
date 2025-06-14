@@ -20,11 +20,16 @@
 
     .contact__wrapper__title {
       font-family: var(--font-serif-light);
-      font-size: var(--font-title-min);
+      font-size: var(--font-title-mobile);
       font-weight: 400;
       margin-bottom: var(--spacing-xl);
       text-transform: none;
       color: var(--green-dark);
+
+      @media screen and (min-width: 1200px) {
+        font-size: var(--font-title-min);
+        
+      }
     }
 
     .contact__wrapper__link {

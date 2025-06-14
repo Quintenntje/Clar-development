@@ -317,7 +317,7 @@ blockquote {
   font-weight: normal;
   line-height: 1;
   color: var(--blue);
-  
+
   height: 50svh;
 
   @media screen and (min-width: 768px) {
@@ -415,6 +415,7 @@ blockquote {
   gap: var(--spacing-base);
   min-height: 100vh;
   height: 100%;
+  width: 100%;
 
   @media screen and (min-width: 1200px) {
     gap: var(--spacing-xl);
@@ -661,11 +662,16 @@ blockquote {
 
     .contact__wrapper__title {
       font-family: var(--font-serif-light);
-      font-size: var(--font-title-min);
+      font-size: var(--font-title-mobile);
       font-weight: 400;
       margin-bottom: var(--spacing-xl);
       text-transform: none;
       color: var(--green-dark);
+
+      @media screen and (min-width: 1200px) {
+        font-size: var(--font-title-min);
+        
+      }
     }
 
     .contact__wrapper__link {
@@ -711,7 +717,7 @@ canvas {
 }
 
 .container {
-  padding: 1rem;
+  padding: 0.5rem;
   max-width: 1500px;
   margin-inline: auto;
 
@@ -721,10 +727,9 @@ canvas {
 }
 
 .content {
-  padding-inline: 1rem;
   padding-block: 0;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
     padding-inline: 1rem;
   }
 }
