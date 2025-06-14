@@ -28,6 +28,7 @@ export default function initHorizontalScrollAnimation() {
 
     const ContainerMovement = gsap.to($container, {
       x: () => `-${$container.scrollWidth + $container.offsetWidth}px`,
+      ease: "none",
       scrollTrigger: {
         trigger: $container.parentElement,
         scrub: true,
@@ -56,49 +57,47 @@ export default function initHorizontalScrollAnimation() {
     });
 
     $scrollItems.forEach(($item) => {
-      gsap.to($item, {
-        scrollTrigger: {
-          trigger: $item,
-          markers: true,
-          scrub: true,
-          start: "left center",
-          end: "right center",
-          containerAnimation: ContainerMovement,
+      ScrollTrigger.create({
+        trigger: $item,
+        containerAnimation: ContainerMovement,
+        markers: true,
+        scrub: true,
+        start: "left 20%",
+        end: "right 70%",
 
-          onLeaveBack: (self) => {
-            gsap.to($item, {
-              opacity: 1,
-            });
-          },
+        onLeaveBack: (self) => {
+          gsap.to($item, {
+            opacity: 1,
+          });
+        },
 
-          onEnter: (self) => {
-            gsap.to($item, {
-              opacity: 0,
-            });
-          },
+        onEnter: (self) => {
+          gsap.to($item, {
+            opacity: 0,
+          });
+        },
 
-          onEnterBack: (self) => {
-            gsap.to($item, {
-              opacity: 1,
-            });
-          },
+        onEnterBack: (self) => {
+          gsap.to($item, {
+            opacity: 1,
+          });
+        },
 
-          onUpdate: (self) => {
-            gsap.to($body, {
-              backgroundColor: $item.getAttribute("data-color-bg"),
-            });
-            gsap.to($container, {
-              color: $item.getAttribute("data-color-text"),
-            });
+        onUpdate: (self) => {
+          gsap.to($body, {
+            backgroundColor: $item.getAttribute("data-color-bg"),
+          });
+          gsap.to($container, {
+            color: $item.getAttribute("data-color-text"),
+          });
 
-            gsap.to($horizontalScrollTitle, {
-              color: $item.getAttribute("data-color-text"),
-            });
+          gsap.to($horizontalScrollTitle, {
+            color: $item.getAttribute("data-color-text"),
+          });
 
-            gsap.to($mouseball, {
-              backgroundColor: $item.getAttribute("data-mouse-color"),
-            });
-          },
+          gsap.to($mouseball, {
+            backgroundColor: $item.getAttribute("data-mouse-color"),
+          });
         },
       });
     });

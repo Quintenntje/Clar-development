@@ -9846,6 +9846,7 @@ function initHorizontalScrollAnimation() {
       x: function x() {
         return "-".concat($container.scrollWidth + $container.offsetWidth, "px");
       },
+      ease: "none",
       scrollTrigger: {
         trigger: $container.parentElement,
         scrub: true,
@@ -9873,43 +9874,41 @@ function initHorizontalScrollAnimation() {
       }
     });
     $scrollItems.forEach(function ($item) {
-      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-        scrollTrigger: {
-          trigger: $item,
-          markers: true,
-          scrub: true,
-          start: "left center",
-          end: "right center",
-          containerAnimation: ContainerMovement,
-          onLeaveBack: function onLeaveBack(self) {
-            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-              opacity: 1
-            });
-          },
-          onEnter: function onEnter(self) {
-            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-              opacity: 0
-            });
-          },
-          onEnterBack: function onEnterBack(self) {
-            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-              opacity: 1
-            });
-          },
-          onUpdate: function onUpdate(self) {
-            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
-              backgroundColor: $item.getAttribute("data-color-bg")
-            });
-            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
-              color: $item.getAttribute("data-color-text")
-            });
-            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
-              color: $item.getAttribute("data-color-text")
-            });
-            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
-              backgroundColor: $item.getAttribute("data-mouse-color")
-            });
-          }
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+        trigger: $item,
+        containerAnimation: ContainerMovement,
+        markers: true,
+        scrub: true,
+        start: "left 20%",
+        end: "right 70%",
+        onLeaveBack: function onLeaveBack(self) {
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+            opacity: 1
+          });
+        },
+        onEnter: function onEnter(self) {
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+            opacity: 0
+          });
+        },
+        onEnterBack: function onEnterBack(self) {
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+            opacity: 1
+          });
+        },
+        onUpdate: function onUpdate(self) {
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
+            backgroundColor: $item.getAttribute("data-color-bg")
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
+            color: $item.getAttribute("data-color-text")
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
+            color: $item.getAttribute("data-color-text")
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
+            backgroundColor: $item.getAttribute("data-mouse-color")
+          });
         }
       });
     });
