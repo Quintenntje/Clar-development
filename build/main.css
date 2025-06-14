@@ -558,7 +558,6 @@ blockquote {
     display: grid;
     align-items: center;
     height: 80vh;
-
     padding-left: 30rem;
   }
 }

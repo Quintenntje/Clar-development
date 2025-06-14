@@ -9884,6 +9884,18 @@ function initHorizontalScrollAnimation() {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
             opacity: 1
           });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
+            backgroundColor: $item.getAttribute("data-color-bg")
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
+            color: $item.getAttribute("data-color-text")
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
+            color: $item.getAttribute("data-color-text")
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
+            backgroundColor: $item.getAttribute("data-mouse-color")
+          });
         },
         onEnterBack: function onEnterBack(self) {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
