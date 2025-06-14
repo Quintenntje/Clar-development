@@ -9878,8 +9878,8 @@ function initHorizontalScrollAnimation() {
         trigger: $item,
         containerAnimation: ContainerMovement,
         scrub: true,
-        start: "left 20%",
-        end: "right 70%",
+        start: "left 25%",
+        end: "right 40%",
         onLeaveBack: function onLeaveBack(self) {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
             opacity: 1

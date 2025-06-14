@@ -61,8 +61,8 @@ export default function initHorizontalScrollAnimation() {
         trigger: $item,
         containerAnimation: ContainerMovement,
         scrub: true,
-        start: "left 20%",
-        end: "right 70%",
+        start: "left 25%",
+        end: "right 40%",
 
         onLeaveBack: (self) => {
           gsap.to($item, {
