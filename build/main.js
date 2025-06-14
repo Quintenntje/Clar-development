@@ -9877,7 +9877,6 @@ function initHorizontalScrollAnimation() {
       gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
         trigger: $item,
         containerAnimation: ContainerMovement,
-        markers: true,
         scrub: true,
         start: "left 20%",
         end: "right 70%",

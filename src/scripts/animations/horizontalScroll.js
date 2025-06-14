@@ -60,7 +60,6 @@ export default function initHorizontalScrollAnimation() {
       ScrollTrigger.create({
         trigger: $item,
         containerAnimation: ContainerMovement,
-        markers: true,
         scrub: true,
         start: "left 20%",
         end: "right 70%",
