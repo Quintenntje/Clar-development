@@ -6,6 +6,11 @@
   width: 100%;
   gap: var(--spacing-base);
 
+  .grid-container__item--align-right {
+    display: grid;
+    justify-content: flex-end;
+  }
+
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     padding-inline: var(--spacing-xl);
@@ -19,6 +24,12 @@
 
   .info-card {
     margin-top: var(--spacing-xl);
+  }
+}
+
+.grid-container--smaller-spacing {
+  @media screen and (min-width: 768px) {
+    padding-bottom: var(--spacing-sm) !important;
   }
 }
 
