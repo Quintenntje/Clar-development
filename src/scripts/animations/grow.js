@@ -17,7 +17,7 @@ export default function initGrowAnimation() {
       transformOrigin: "center bottom",
       duration: 1,
       stagger: {
-        amount: 0,
+        amount: 0.5,
         from: "end",
       },
     });
