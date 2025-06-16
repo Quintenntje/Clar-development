@@ -9841,6 +9841,7 @@ function initHorizontalScrollAnimation() {
   $scrollContainer.forEach(function ($container) {
     var $scrollItems = $container.querySelectorAll('[data-animation-child="horizontal-scroll"]');
     var blue = "#082b9d";
+    var yellow = "#f4b63e";
     var white = "#f8f6f1";
     var ContainerMovement = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
       x: function x() {
@@ -9868,7 +9869,7 @@ function initHorizontalScrollAnimation() {
             color: blue
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
-            backgroundColor: blue
+            backgroundColor: yellow
           });
         }
       }
@@ -9878,8 +9879,8 @@ function initHorizontalScrollAnimation() {
         trigger: $item,
         containerAnimation: ContainerMovement,
         scrub: true,
-        start: "left 25%",
-        end: "right 40%",
+        start: "left 18%",
+        end: "right 20%",
         onLeaveBack: function onLeaveBack(self) {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
             opacity: 1

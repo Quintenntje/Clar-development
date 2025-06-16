@@ -8,10 +8,18 @@
   font-weight: normal;
   line-height: 1;
   color: var(--blue);
-
   height: 50svh;
 
   @media screen and (min-width: 768px) {
+    font-size: var(--font-title-mobile);
+    max-width: 200px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--font-title-max);
+  }
+
+  @media screen and (min-width: 900px) {
     font-size: var(--font-display-min);
   }
 
@@ -52,8 +60,11 @@
       font-family: var(--font-serif-light-italic);
     }
   }
+  .title-section__text--no-spacing {
+    padding-inline: 0 !important;
+  }
 }
 
 .title-section--no-spacing {
-  padding-inline: 0;
+  padding-inline: 0 !important;
 }

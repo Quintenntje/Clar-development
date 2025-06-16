@@ -24,6 +24,7 @@ export default function initHorizontalScrollAnimation() {
     );
 
     const blue = "#082b9d";
+    const yellow = "#f4b63e";
     const white = "#f8f6f1";
 
     const ContainerMovement = gsap.to($container, {
@@ -50,7 +51,7 @@ export default function initHorizontalScrollAnimation() {
           });
 
           gsap.to($mouseball, {
-            backgroundColor: blue,
+            backgroundColor: yellow,
           });
         },
       },
@@ -61,8 +62,8 @@ export default function initHorizontalScrollAnimation() {
         trigger: $item,
         containerAnimation: ContainerMovement,
         scrub: true,
-        start: "left 25%",
-        end: "right 40%",
+        start: "left 18%",
+        end: "right 20%",
 
         onLeaveBack: (self) => {
           gsap.to($item, {

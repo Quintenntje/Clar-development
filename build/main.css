@@ -317,10 +317,18 @@ blockquote {
   font-weight: normal;
   line-height: 1;
   color: var(--blue);
-
   height: 50svh;
 
   @media screen and (min-width: 768px) {
+    font-size: var(--font-title-mobile);
+    max-width: 200px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--font-title-max);
+  }
+
+  @media screen and (min-width: 900px) {
     font-size: var(--font-display-min);
   }
 
@@ -361,10 +369,13 @@ blockquote {
       font-family: var(--font-serif-light-italic);
     }
   }
+  .title-section__text--no-spacing {
+    padding-inline: 0 !important;
+  }
 }
 
 .title-section--no-spacing {
-  padding-inline: 0;
+  padding-inline: 0 !important;
 }
 
 .header {
@@ -411,7 +422,7 @@ blockquote {
 
 .hero-section {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 5fr;
   gap: var(--spacing-base);
   min-height: 100vh;
   height: 100%;
@@ -419,7 +430,7 @@ blockquote {
 
   @media screen and (min-width: 1200px) {
     gap: var(--spacing-xl);
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 200px 4fr;
   }
 }
 
@@ -512,18 +523,18 @@ blockquote {
   padding-inline: 0;
   margin-top: var(--spacing-xl);
   width: 100%;
-  gap: var(--spacing-base);
+  gap: var(--spacing-lg);
 
-  .grid-container__item--align-right {
-    display: grid;
-    justify-content: flex-end;
-  }
-
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 700px) {
     grid-template-columns: repeat(2, 1fr);
     padding-inline: var(--spacing-xl);
     margin-top: 5rem;
     gap: 0;
+    
+    .grid-container__item--align-right {
+      display: grid;
+      justify-content: flex-end;
+    }
   }
 
   @media screen and (min-width: 1200px) {
@@ -591,6 +602,11 @@ blockquote {
 .section {
   color: var(--foreground-color);
   position: relative;
+  padding-block: var(--spacing-lg);
+
+  @media screen and (min-width: 768px) {
+    padding-block: 0;
+  }
 }
 
 .section--blue {
