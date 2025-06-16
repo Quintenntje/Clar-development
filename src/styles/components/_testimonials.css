@@ -4,6 +4,7 @@
   overflow-x: hidden;
   width: 100%;
   grid-column: 2;
+  padding-left: 0.5rem;
 
   @media screen and (min-width: 1200px) {
     display: grid;
@@ -23,13 +24,30 @@
 
   .testimonial {
     display: flex;
-    max-width: 300px;
+    max-width: 250px;
     width: 100%;
+    font-size: var(--font-subtitle);
     flex-direction: column;
     justify-content: top;
     align-items: start;
     gap: var(--spacing-xl);
     height: 100%;
+
+    .testimonial__text {
+      position: relative;
+
+      &::before {
+        content: open-quote;
+        position: absolute;
+        top: 0rem;
+        left: -0.5rem;
+      }
+
+      &::after {
+        content: close-quote;
+        position: absolute;
+      }
+    }
 
     .testimonial__author {
       font-size: var(--font-subtitle);
