@@ -9764,7 +9764,7 @@ function initFadeInListItemsAnimation() {
       var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
         scrollTrigger: {
           trigger: $item,
-          start: "top 100%",
+          start: "top 80%",
           toggleActions: "play reset play reverse"
         }
       });
