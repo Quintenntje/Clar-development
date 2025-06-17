@@ -52,6 +52,10 @@ export default function initHorizontalScrollAnimation() {
           gsap.to($mouseball, {
             backgroundColor: yellow,
           });
+
+          gsap.to($container.parentElement, {
+            "--gradient-color": white,
+          });
         },
       },
     });
@@ -73,7 +77,7 @@ export default function initHorizontalScrollAnimation() {
         },
 
         onLeaveBack: (self) => {
-           const opacity = 1 - self.progress * 1.5;
+          const opacity = 1 - self.progress * 1.5;
 
           gsap.to($item, {
             opacity: opacity,
@@ -104,6 +108,10 @@ export default function initHorizontalScrollAnimation() {
 
         gsap.to($mouseball, {
           backgroundColor: $item.getAttribute("data-mouse-color"),
+        });
+
+        gsap.to($container.parentElement, {
+          "--gradient-color": $item.getAttribute("data-color-bg"),
         });
       }
     });

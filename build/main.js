@@ -9868,6 +9868,9 @@ function initHorizontalScrollAnimation() {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
             backgroundColor: yellow
           });
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container.parentElement, {
+            "--gradient-color": white
+          });
         }
       }
     });
@@ -9910,6 +9913,9 @@ function initHorizontalScrollAnimation() {
         });
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
           backgroundColor: $item.getAttribute("data-mouse-color")
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container.parentElement, {
+          "--gradient-color": $item.getAttribute("data-color-bg")
         });
       }
     });
