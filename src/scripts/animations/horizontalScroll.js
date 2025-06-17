@@ -65,25 +65,24 @@ export default function initHorizontalScrollAnimation() {
         start: "left 18%",
         end: "right 20%",
 
-        onLeaveBack: (self) => {
+        onUpdate: (self) => {
+          const opacity = 1 - self.progress * 1.5;
+
           gsap.to($item, {
-            opacity: 1,
+            opacity: opacity,
           });
+        },
+
+        onLeaveBack: (self) => {
           runColorAnimation();
         },
 
         onEnterBack: (self) => {
-          gsap.to($item, {
-            opacity: 1,
-          });
           runColorAnimation();
         },
 
         onEnter: (self) => {
           runColorAnimation();
-          gsap.to($item, {
-            opacity: 0,
-          });
         },
       });
 

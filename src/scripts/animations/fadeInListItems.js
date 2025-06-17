@@ -8,15 +8,15 @@ export default function initFadeInListItemsAnimation() {
   );
 
   $items.forEach(($item) => {
-    const $listItem = $item.querySelectorAll(
+    const $children = $item.querySelectorAll(
       '[data-animation-child="fade-in-list-items"]'
     );
 
-    $listItem.forEach(($el, index) => {
+    $children.forEach(($el, index) => {
       const fadeInTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: $item,
-          start: "top 80%",
+          start: "top 100%",
           toggleActions: "play reset play reverse",
         },
       });

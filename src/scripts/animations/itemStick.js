@@ -24,11 +24,13 @@ function stickAnimation($container, $child) {
 
   gsap.to($child, {
     y: scrollDistance,
+
     scrollTrigger: {
       trigger: $container,
       start: "top top",
-      end: "bottom top",
+      end: () => `+=${containerHeight}`,
       scrub: true,
+      invalidateOnRefresh: true,
     },
   });
 }

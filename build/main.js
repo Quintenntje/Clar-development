@@ -9725,16 +9725,15 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 function initFadeInAnimation() {
   var $fadeInEl = document.querySelectorAll("[data-animation='fade-in']");
   $fadeInEl.forEach(function ($el) {
-    var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($el, {
+      opacity: 0,
+      y: 100,
       scrollTrigger: {
         trigger: $el,
-        start: "top 80%",
+        start: "top 100%",
+        end: "bottom 0%",
         toggleActions: "play reset play reverse"
       }
-    });
-    fadeInTimeline.from($el, {
-      opacity: 0,
-      y: 100
     });
   });
 }
@@ -9759,12 +9758,12 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 function initFadeInListItemsAnimation() {
   var $items = document.querySelectorAll('[data-animation="fade-in-list-items"]');
   $items.forEach(function ($item) {
-    var $listItem = $item.querySelectorAll('[data-animation-child="fade-in-list-items"]');
-    $listItem.forEach(function ($el, index) {
+    var $children = $item.querySelectorAll('[data-animation-child="fade-in-list-items"]');
+    $children.forEach(function ($el, index) {
       var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
         scrollTrigger: {
           trigger: $item,
-          start: "top 80%",
+          start: "top 100%",
           toggleActions: "play reset play reverse"
         }
       });
@@ -9881,23 +9880,20 @@ function initHorizontalScrollAnimation() {
         scrub: true,
         start: "left 18%",
         end: "right 20%",
-        onLeaveBack: function onLeaveBack(self) {
+        onUpdate: function onUpdate(self) {
+          var opacity = 1 - self.progress * 1.5;
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-            opacity: 1
+            opacity: opacity
           });
+        },
+        onLeaveBack: function onLeaveBack(self) {
           runColorAnimation();
         },
         onEnterBack: function onEnterBack(self) {
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-            opacity: 1
-          });
           runColorAnimation();
         },
         onEnter: function onEnter(self) {
           runColorAnimation();
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-            opacity: 0
-          });
         }
       });
       function runColorAnimation() {
@@ -9948,16 +9944,17 @@ function stickAnimation($container, $child) {
   var containerHeight = $container.offsetHeight;
   var childHeight = $child.offsetHeight;
   var scrollDistance = containerHeight - childHeight;
-  var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($child, {
+    y: scrollDistance,
     scrollTrigger: {
       trigger: $container,
       start: "top top",
-      end: "bottom top",
-      scrub: true
+      end: function end() {
+        return "+=".concat(containerHeight);
+      },
+      scrub: true,
+      invalidateOnRefresh: true
     }
-  });
-  tl.to($child, {
-    y: scrollDistance
   });
 }
 
