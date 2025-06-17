@@ -74,6 +74,11 @@ export default function initHorizontalScrollAnimation() {
         },
 
         onLeaveBack: (self) => {
+           const opacity = 1 - self.progress * 1.5;
+
+          gsap.to($item, {
+            opacity: opacity,
+          });
           runColorAnimation();
         },
 

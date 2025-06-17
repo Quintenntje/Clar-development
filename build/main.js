@@ -9887,6 +9887,10 @@ function initHorizontalScrollAnimation() {
           });
         },
         onLeaveBack: function onLeaveBack(self) {
+          var opacity = 1 - self.progress * 1.5;
+          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+            opacity: opacity
+          });
           runColorAnimation();
         },
         onEnterBack: function onEnterBack(self) {
