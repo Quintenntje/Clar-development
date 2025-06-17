@@ -15,15 +15,12 @@
     max-width: 200px;
   }
 
-  @media screen and (min-width: 768px) {
-    font-size: var(--font-title-max);
-  }
 
   @media screen and (min-width: 900px) {
     font-size: var(--font-display-min);
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1600px) {
     font-size: var(--font-display-max);
   }
 }

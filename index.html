@@ -105,9 +105,9 @@
             </h1>
           </div>
           <div class="grid-container">
-            <h3 data-animation="fade-in" class="subtitle">
+            <span data-animation="fade-in" class="subtitle">
               Find your voice in the chaos
-            </h3>
+            </span>
             <div data-animation="fade-in" class="info-card">
               <h2 class="info-card__title">Our vision</h2>
               <p class="info-card__text">
@@ -221,22 +221,22 @@
           <h2 data-animation="title-fade-in" class="title-section">
             <span
               data-animation-child="title-fade-in"
-              class="title-section__text title-section__text"
+              class="title-section__text"
               >We are</span
             >
             <span
               data-animation-child="title-fade-in"
-              class="title-section__text title-section__text"
+              class="title-section__text"
               >a new generation</span
             >
             <span
               data-animation-child="title-fade-in"
-              class="title-section__text title-section__text"
+              class="title-section__text"
               >communication</span
             >
             <span
               data-animation-child="title-fade-in"
-              class="title-section__text title-section__text"
+              class="title-section__text"
               >agency</span
             >
           </h2>
@@ -335,22 +335,22 @@
           <h2 data-animation="title-fade-in" class="title-section">
             <span
               data-animation-child="title-fade-in"
-              class="title-section__text title-section__text"
+              class="title-section__text"
               >A multitalented</span
             >
             <span
               data-animation-child="title-fade-in"
-              class="title-section__text title-section__text"
+              class="title-section__text"
               >agency for</span
             >
             <span
               data-animation-child="title-fade-in"
-              class="title-section__text title-section__text"
+              class="title-section__text"
               >a total control</span
             >
             <span
               data-animation-child="title-fade-in"
-              class="title-section__text title-section__text"
+              class="title-section__text"
               >of your image</span
             >
           </h2>
@@ -421,6 +421,7 @@
           <div data-mouse-image="christel.jpg" class="team-member">
             <span class="team-member__role">founder</span>
             <img
+              data-animation="fade-in"
               class="sr-pc team-member__image"
               src="./assets/christel.jpg"
               alt="picture of Christel"
@@ -432,12 +433,12 @@
             >
               <span
                 data-animation-child="title-fade-in"
-                class="title-section__text title-section__text title-section__text--no-spacing"
+                class="title-section__text title-section__text--no-spacing"
                 >Christel</span
               >
               <span
                 data-animation-child="title-fade-in"
-                class="title-section__text title-section__text title-section__text--no-spacing"
+                class="title-section__text title-section__text--no-spacing"
                 >Dagher Hayeck</span
               >
             </span>
@@ -445,6 +446,7 @@
           <div data-mouse-image="phillipa.jpg" class="team-member">
             <span class="team-member__role">co-founder</span>
             <img
+              data-animation="fade-in"
               class="sr-pc team-member__image"
               src="./assets/phillipa.jpg"
               alt="picture of Phillipa"
@@ -455,12 +457,12 @@
             >
               <span
                 data-animation-child="title-fade-in"
-                class="title-section__text title-section__text title-section__text--no-spacing"
+                class="title-section__text title-section__text--no-spacing"
                 >Phillipa</span
               >
               <span
                 data-animation-child="title-fade-in"
-                class="title-section__text title-section__text title-section__text--no-spacing"
+                class="title-section__text title-section__text--no-spacing"
                 >Poulain-Juthiaud</span
               >
             </span>
@@ -468,6 +470,7 @@
           <div data-mouse-image="geraldine.jpg" class="team-member">
             <span class="team-member__role">Creative designer</span>
             <img
+              data-animation="fade-in"
               class="sr-pc team-member__image"
               src="./assets/geraldine.jpg"
               alt="picture of Geraldine"
@@ -478,12 +481,12 @@
             >
               <span
                 data-animation-child="title-fade-in"
-                class="title-section__text title-section__text title-section__text--no-spacing"
+                class="title-section__text title-section__text--no-spacing"
                 >Geraldine
               </span>
               <span
                 data-animation-child="title-fade-in"
-                class="title-section__text title-section__text title-section__text--no-spacing"
+                class="title-section__text title-section__text--no-spacing"
                 >Hantson</span
               >
             </span>
@@ -491,6 +494,7 @@
           <div data-mouse-image="chiara.jpg" class="team-member">
             <span class="team-member__role">Creative designer</span>
             <img
+              data-animation="fade-in"
               class="sr-pc team-member__image"
               src="./assets/chiara.jpg"
               alt="picture of Chiara"
@@ -523,14 +527,18 @@
         <div class="contact" data-mouse-color="#f4b63e">
           <div data-animation="shrink" class="contact__wrapper">
             <h2 class="contact__wrapper__title">Do you like what you see?</h2>
-            <a
+            <span
               data-animation-child="shrink"
               data-mouse-color="#a2543d"
               class="contact__wrapper__link"
-              href="mailto:info@clar.be"
-              >Contact</a
+              >Contact</span
             >
-            <a class="link--full" href="mailto:info@clar.be"></a>
+
+            <a
+              class="link--full"
+              href="mailto:info@clar.be"
+              aria-label="Contact us"
+            ></a>
           </div>
         </div>
       </div>

@@ -37,7 +37,6 @@ export default function initHorizontalScrollAnimation() {
         anticipatePin: 1,
         start: "top top",
         end: () => `+=${$container.scrollHeight}`,
-        invalidateOnRefresh: true,
 
         onLeaveBack: () => {
           gsap.to($body, {

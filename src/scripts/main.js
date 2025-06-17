@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initMouseAnimation();
   initPageLoaderAnimation();
   initTitleStickAnimation();
-  initFadeInAnimation();
   initHorizontalScrollAnimation();
   initFadeInListItemsAnimation();
+  initFadeInAnimation();
   initGrowAnimation();
   initShrinkAnimation();
   initParallaxEffectAnimation();

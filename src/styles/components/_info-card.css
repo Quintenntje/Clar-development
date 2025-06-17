@@ -1,3 +1,10 @@
+.info-cards{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+
 .info-card {
   font-family: var(--font-sans);
   position: relative;
@@ -16,7 +23,7 @@
   }
 
   .info-card__list {
-    margin-top: var(--spacing-base);
+    margin-top: var(--spacing-sm);
     font-size: var(--text);
     list-style: none;
     padding-left: 0;
@@ -24,6 +31,7 @@
     .info-card__list__item {
       display: flex;
       align-items: center;
+
       &::before {
         content: "*";
         display: inline-block;
@@ -49,8 +57,9 @@
 
 .info-card--larger {
   width: 100%;
+  min-width: 300px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     width: 100%;
     min-width: 400px;
   }

@@ -7,14 +7,13 @@ export default function initFadeInAnimation() {
 
   $fadeInEl.forEach(($el) => {
     gsap.from($el, {
-      opacity: 0,
-      y: 100,
       scrollTrigger: {
         trigger: $el,
         start: "top 100%",
-        end: "bottom 0%",
         toggleActions: "play reset play reverse",
       },
+      y: 150,
+      opacity: 0,
     });
   });
 }
