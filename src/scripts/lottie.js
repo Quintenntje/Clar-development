@@ -5,8 +5,8 @@ function loadLottieFiles() {
 
   $canvases.forEach(($canvas) => {
     const dotLottie = new DotLottie({
-      autoplay: true,
-      loop: true,
+      autoplay: $canvas.getAttribute("data-lottie-autoplay") === "true",
+      loop: $canvas.getAttribute("data-lottie-loop") === "true",
       speed: $canvas.getAttribute("data-lottie-speed") || 1,
       canvas: $canvas,
       layout: {

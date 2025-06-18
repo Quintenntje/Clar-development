@@ -10248,8 +10248,8 @@ function loadLottieFiles() {
   var $canvases = document.querySelectorAll("[data-lottie-source]");
   $canvases.forEach(function ($canvas) {
     var dotLottie = new _lottiefiles_dotlottie_web__WEBPACK_IMPORTED_MODULE_0__.DotLottie({
-      autoplay: true,
-      loop: true,
+      autoplay: $canvas.getAttribute("data-lottie-autoplay") === "true",
+      loop: $canvas.getAttribute("data-lottie-loop") === "true",
       speed: $canvas.getAttribute("data-lottie-speed") || 1,
       canvas: $canvas,
       layout: {
