@@ -66,7 +66,7 @@ export default function initHorizontalScrollAnimation() {
         containerAnimation: ContainerMovement,
         scrub: true,
         start: "left 18%",
-        end: "right 20%",
+        end: "right 10%",
 
         onUpdate: (self) => {
           const opacity = 1 - self.progress * 1.5;

@@ -9880,7 +9880,7 @@ function initHorizontalScrollAnimation() {
         containerAnimation: ContainerMovement,
         scrub: true,
         start: "left 18%",
-        end: "right 20%",
+        end: "right 10%",
         onUpdate: function onUpdate(self) {
           var opacity = 1 - self.progress * 1.5;
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
