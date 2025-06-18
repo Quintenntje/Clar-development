@@ -34,5 +34,5 @@
 
 .section--full {
   min-height: 100svh;
-  width: 100vw;
+  max-width: 100svw;
 }
