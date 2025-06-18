@@ -1,6 +1,6 @@
 .mouse-container {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   mix-blend-mode: difference;
 

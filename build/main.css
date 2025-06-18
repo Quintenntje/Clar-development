@@ -243,7 +243,7 @@ blockquote {
 
 .mouse-container {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   mix-blend-mode: difference;
 
@@ -310,7 +310,7 @@ blockquote {
 .title {
   display: flex;
   justify-content: end;
-  font-size: var(--font-title-min);
+  font-size: var(--font-title-mobile);
   font-family: var(--font-serif), serif;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -319,11 +319,14 @@ blockquote {
   color: var(--blue);
   height: 240px;
 
+  @media screen and (min-width: 375px) {
+    font-size: var(--font-title-min);
+  }
+
   @media screen and (min-width: 768px) {
     font-size: var(--font-title-min);
     max-width: 200px;
   }
-
 
   @media screen and (min-width: 800px) {
     font-size: var(--font-display-min);
@@ -420,10 +423,13 @@ blockquote {
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  gap: var(--spacing-sm);
   min-height: 100vh;
   height: 100%;
   width: 100%;
+
+  @media screen and (min-width: 375px) {
+    gap: var(--spacing-sm);
+  }
 
   @media screen and (min-width: 1200px) {
     grid-template-columns: 200px 4fr;
@@ -650,8 +656,9 @@ blockquote {
   color: var(--foreground-color);
   position: relative;
   padding-block: var(--spacing-lg);
+  overflow: hidden;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1200px) {
     padding-block: 0;
   }
 }
@@ -664,12 +671,12 @@ blockquote {
 .section--green {
   background-color: var(--green-dark);
   color: var(--green-light);
+  z-index: 2;
 }
 
 .section--orange {
   background-color: var(--orange);
   color: var(--peach);
-  position: relative;
   z-index: 2;
 }
 
@@ -759,7 +766,12 @@ blockquote {
 .canvas {
   width: 100%;
   max-width: 500px;
-  min-width: 350px;
+  min-width: 300px;
+
+
+  @media screen and (min-width: 375px) {
+    min-width: 350px;
+  }
 }
 
 body {
@@ -772,11 +784,12 @@ h1,
 h2,
 h3,
 p,
+a,
 span,
 blockquote,
 canvas {
   position: relative;
-  z-index: 3;
+  z-index: 20 !important;
 }
 
 .container {
@@ -798,7 +811,7 @@ canvas {
 }
 
 .sr-pc {
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 768px) {
     position: absolute;
     width: 1px !important;
     height: 1px !important;

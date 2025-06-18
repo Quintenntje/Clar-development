@@ -10029,7 +10029,7 @@ function increaseMouseIndex() {
     });
     $section.addEventListener("mouseleave", function () {
       gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseContainer, {
-        zIndex: 2,
+        zIndex: 3,
         duration: 0.5
       });
     });

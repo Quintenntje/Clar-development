@@ -2,8 +2,9 @@
   color: var(--foreground-color);
   position: relative;
   padding-block: var(--spacing-lg);
+  overflow: hidden;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1200px) {
     padding-block: 0;
   }
 }
@@ -16,12 +17,12 @@
 .section--green {
   background-color: var(--green-dark);
   color: var(--green-light);
+  z-index: 2;
 }
 
 .section--orange {
   background-color: var(--orange);
   color: var(--peach);
-  position: relative;
   z-index: 2;
 }
 

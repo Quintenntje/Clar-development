@@ -20,11 +20,10 @@ export default function initFadeInListItemsAnimation() {
       },
       opacity: 0,
       x: -20,
-    stagger: {
-      amount: 1,
-      from: "start",
-    }
-
+      stagger: {
+        amount: 1,
+        from: "start",
+      },
     });
   });
 }

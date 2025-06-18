@@ -26,11 +26,12 @@ h1,
 h2,
 h3,
 p,
+a,
 span,
 blockquote,
 canvas {
   position: relative;
-  z-index: 3;
+  z-index: 20 !important;
 }
 
 .container {
@@ -52,7 +53,7 @@ canvas {
 }
 
 .sr-pc {
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 768px) {
     position: absolute;
     width: 1px !important;
     height: 1px !important;

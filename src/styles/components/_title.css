@@ -1,7 +1,7 @@
 .title {
   display: flex;
   justify-content: end;
-  font-size: var(--font-title-min);
+  font-size: var(--font-title-mobile);
   font-family: var(--font-serif), serif;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -10,11 +10,14 @@
   color: var(--blue);
   height: 240px;
 
+  @media screen and (min-width: 375px) {
+    font-size: var(--font-title-min);
+  }
+
   @media screen and (min-width: 768px) {
     font-size: var(--font-title-min);
     max-width: 200px;
   }
-
 
   @media screen and (min-width: 800px) {
     font-size: var(--font-display-min);
