@@ -9758,19 +9758,18 @@ function initFadeInListItemsAnimation() {
   var $items = document.querySelectorAll('[data-animation="fade-in-list-items"]');
   $items.forEach(function ($item) {
     var $children = $item.querySelectorAll('[data-animation-child="fade-in-list-items"]');
-    $children.forEach(function ($el, index) {
-      var fadeInTimeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-        scrollTrigger: {
-          trigger: $item,
-          start: "top 100%",
-          toggleActions: "play reset play reverse"
-        }
-      });
-      fadeInTimeline.from($el, {
-        opacity: 0,
-        x: -20,
-        delay: index * 0.2
-      });
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from($children, {
+      scrollTrigger: {
+        trigger: $item,
+        start: "top 100%",
+        toggleActions: "play reset play reverse"
+      },
+      opacity: 0,
+      x: -20,
+      stagger: {
+        amount: 1,
+        from: "start"
+      }
     });
   });
 }

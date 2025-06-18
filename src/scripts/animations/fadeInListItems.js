@@ -12,20 +12,19 @@ export default function initFadeInListItemsAnimation() {
       '[data-animation-child="fade-in-list-items"]'
     );
 
-    $children.forEach(($el, index) => {
-      const fadeInTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: $item,
-          start: "top 100%",
-          toggleActions: "play reset play reverse",
-        },
-      });
+    gsap.from($children, {
+      scrollTrigger: {
+        trigger: $item,
+        start: "top 100%",
+        toggleActions: "play reset play reverse",
+      },
+      opacity: 0,
+      x: -20,
+    stagger: {
+      amount: 1,
+      from: "start",
+    }
 
-      fadeInTimeline.from($el, {
-        opacity: 0,
-        x: -20,
-        delay: index * 0.2,
-      });
     });
   });
 }
