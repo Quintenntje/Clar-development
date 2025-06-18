@@ -82,7 +82,7 @@ export default function initHorizontalScrollAnimation() {
         },
       });
 
-      function changeOpacity(self){
+      function changeOpacity(self) {
         const opacity = 1 - self.progress * 1.5;
 
         gsap.to($item, {

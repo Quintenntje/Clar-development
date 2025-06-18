@@ -7,7 +7,7 @@ function loadLottieFiles() {
     const dotLottie = new DotLottie({
       autoplay: true,
       loop: true,
-      speed: 2,
+      speed: $canvas.getAttribute("data-lottie-speed") || 1,
       canvas: $canvas,
       layout: {
         fit: "cover",

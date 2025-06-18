@@ -10250,7 +10250,7 @@ function loadLottieFiles() {
     var dotLottie = new _lottiefiles_dotlottie_web__WEBPACK_IMPORTED_MODULE_0__.DotLottie({
       autoplay: true,
       loop: true,
-      speed: 2,
+      speed: $canvas.getAttribute("data-lottie-speed") || 1,
       canvas: $canvas,
       layout: {
         fit: "cover",
