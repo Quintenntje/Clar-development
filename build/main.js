@@ -9881,16 +9881,10 @@ function initHorizontalScrollAnimation() {
         start: "left 18%",
         end: "right 10%",
         onUpdate: function onUpdate(self) {
-          var opacity = 1 - self.progress * 1.5;
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-            opacity: opacity
-          });
+          changeOpacity(self);
         },
         onLeaveBack: function onLeaveBack(self) {
-          var opacity = 1 - self.progress * 1.5;
-          gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
-            opacity: opacity
-          });
+          changeOpacity(self);
           runColorAnimation();
         },
         onEnterBack: function onEnterBack(self) {
@@ -9900,6 +9894,12 @@ function initHorizontalScrollAnimation() {
           runColorAnimation();
         }
       });
+      function changeOpacity(self) {
+        var opacity = 1 - self.progress * 1.5;
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($item, {
+          opacity: opacity
+        });
+      }
       function runColorAnimation() {
         gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
           backgroundColor: $item.getAttribute("data-color-bg")

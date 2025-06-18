@@ -69,19 +69,11 @@ export default function initHorizontalScrollAnimation() {
         end: "right 10%",
 
         onUpdate: (self) => {
-          const opacity = 1 - self.progress * 1.5;
-
-          gsap.to($item, {
-            opacity: opacity,
-          });
+          changeOpacity(self);
         },
 
         onLeaveBack: (self) => {
-          const opacity = 1 - self.progress * 1.5;
-
-          gsap.to($item, {
-            opacity: opacity,
-          });
+          changeOpacity(self);
           runColorAnimation();
         },
 
@@ -93,6 +85,14 @@ export default function initHorizontalScrollAnimation() {
           runColorAnimation();
         },
       });
+
+      function changeOpacity(self){
+        const opacity = 1 - self.progress * 1.5;
+
+        gsap.to($item, {
+          opacity: opacity,
+        });
+      }
 
       function runColorAnimation() {
         gsap.to($body, {
