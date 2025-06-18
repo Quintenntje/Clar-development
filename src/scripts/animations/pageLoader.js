@@ -42,7 +42,7 @@ function initPageLoaderAnimation() {
     .add(logoTimeline($logo))
     .add(
       wrapperTimeline($wrapper)
-        .add(mouseEnterAnimation, "<+.1")
+        .add(mouseEnterAnimation, "<+.05")
         .add(initTitleFadeInAnimation)
     );
 }

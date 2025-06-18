@@ -10121,7 +10121,7 @@ function wrapperTimeline() {
 }
 function initPageLoaderAnimation() {
   var masterTimeline = gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.timeline();
-  masterTimeline.add(logoTimeline($logo)).add(wrapperTimeline($wrapper).add(_mouse_js__WEBPACK_IMPORTED_MODULE_0__.mouseEnterAnimation, "<+.1").add(_titleFadeIn_js__WEBPACK_IMPORTED_MODULE_1__["default"]));
+  masterTimeline.add(logoTimeline($logo)).add(wrapperTimeline($wrapper).add(_mouse_js__WEBPACK_IMPORTED_MODULE_0__.mouseEnterAnimation, "<+.05").add(_titleFadeIn_js__WEBPACK_IMPORTED_MODULE_1__["default"]));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initPageLoaderAnimation);
 

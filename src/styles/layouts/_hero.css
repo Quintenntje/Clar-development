@@ -1,13 +1,12 @@
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  gap: var(--spacing-base);
+  gap: var(--spacing-sm);
   min-height: 100vh;
   height: 100%;
   width: 100%;
 
   @media screen and (min-width: 1200px) {
-    gap: var(--spacing-xl);
     grid-template-columns: 200px 4fr;
   }
 }
