@@ -30,7 +30,6 @@
   background-color: var(--yellow);
   color: var(--peach);
   overflow: hidden;
-  z-index: 1 !important;
 }
 
 .section--full {
