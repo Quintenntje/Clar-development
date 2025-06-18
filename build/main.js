@@ -9837,9 +9837,6 @@ function initHorizontalScrollAnimation() {
   var $scrollContainer = document.querySelectorAll('[data-animation="horizontal-scroll"]');
   $scrollContainer.forEach(function ($container) {
     var $scrollItems = $container.querySelectorAll('[data-animation-child="horizontal-scroll"]');
-    var blue = "#082b9d";
-    var yellow = "#f4b63e";
-    var white = "#f8f6f1";
     var ContainerMovement = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
       x: function x() {
         return "-".concat($container.scrollWidth + $container.offsetWidth, "px");
@@ -9856,19 +9853,19 @@ function initHorizontalScrollAnimation() {
         },
         onLeaveBack: function onLeaveBack() {
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($body, {
-            backgroundColor: white
+            backgroundColor: $container.getAttribute("data-color-bg")
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container, {
-            color: blue
+            color: $container.getAttribute("data-color-text")
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($horizontalScrollTitle, {
-            color: blue
+            color: $container.getAttribute("data-color-text")
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($mouseball, {
-            backgroundColor: yellow
+            backgroundColor: $container.getAttribute("data-mouse-color")
           });
           gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to($container.parentElement, {
-            "--gradient-color": white
+            "--gradient-color": $container.getAttribute("data-color-bg")
           });
         }
       }

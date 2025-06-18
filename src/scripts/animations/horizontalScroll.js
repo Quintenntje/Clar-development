@@ -23,10 +23,6 @@ export default function initHorizontalScrollAnimation() {
       '[data-animation-child="horizontal-scroll"]'
     );
 
-    const blue = "#082b9d";
-    const yellow = "#f4b63e";
-    const white = "#f8f6f1";
-
     const ContainerMovement = gsap.to($container, {
       x: () => `-${$container.scrollWidth + $container.offsetWidth}px`,
       ease: "none",
@@ -40,21 +36,21 @@ export default function initHorizontalScrollAnimation() {
 
         onLeaveBack: () => {
           gsap.to($body, {
-            backgroundColor: white,
+            backgroundColor: $container.getAttribute("data-color-bg"),
           });
           gsap.to($container, {
-            color: blue,
+            color: $container.getAttribute("data-color-text"),
           });
           gsap.to($horizontalScrollTitle, {
-            color: blue,
+            color: $container.getAttribute("data-color-text"),
           });
 
           gsap.to($mouseball, {
-            backgroundColor: yellow,
+            backgroundColor: $container.getAttribute("data-mouse-color"),
           });
 
           gsap.to($container.parentElement, {
-            "--gradient-color": white,
+            "--gradient-color": $container.getAttribute("data-color-bg"),
           });
         },
       },
