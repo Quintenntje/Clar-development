@@ -13,7 +13,7 @@ function loadLottieFiles() {
         fit: "cover",
         align: [0.5, 0],
       },
-      src: `/assets/lotties/${$canvas.getAttribute("data-lottie-source")}`,
+      src: `./assets/lotties/${$canvas.getAttribute("data-lottie-source")}`,
     });
   });
 }
