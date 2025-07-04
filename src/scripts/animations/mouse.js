@@ -74,7 +74,7 @@ function changeMouseToImage() {
       clearTimeout(blendModeTimeOut);
       $mouseContainer.style.mixBlendMode = "normal";
       gsap.to($mouseballImage, {
-        backgroundImage: `url(../../assets/${image})`,
+        backgroundImage: `url(./assets/${image})`,
         duration: 0.5,
         scale: 1,
       });
@@ -86,7 +86,7 @@ function changeMouseToImage() {
       }, 500);
       gsap.to($mouseballImage, {
         scale: 0,
-        backgroundImage: `url(../../assets/${image})`,
+        backgroundImage: `url(./assets/${image})`,
         duration: 0.5,
       });
     });
