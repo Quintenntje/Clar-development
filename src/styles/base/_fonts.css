@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Akzidenz-Grotesk BQ";
-  src: url("./fonts/AkzidenzGroteskBQ.woff2") format("woff2");
+  src: url("fonts/AkzidenzGroteskBQ.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Canela";
-  src: url("./fonts/Canela-Regular.woff2") format("woff2");
+  src: url("fonts/Canela-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Canela Light";
-  src: url("./fonts/Canela-Light.woff2") format("woff2");
+  src: url("fonts/Canela-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "Canela Light Italic";
-  src: url("./fonts/Canela-LightItalic.woff2") format("woff2");
+  src: url("fonts/Canela-LightItalic.woff2") format("woff2");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: "Canela Regular";
-  src: url("./fonts/Canela-Regular.woff2") format("woff2");
+  src: url("fonts/Canela-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
