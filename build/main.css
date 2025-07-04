@@ -160,49 +160,45 @@ h6 {
 }
 
 @font-face {
-    font-family: "Akzidenz-Grotesk BQ";
-    src: url("/assets/fonts/AkzidenzGroteskBQ.woff2") format("woff2"),
-         url("/assets/fonts/AkzidenzGroteskBQ.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: "Canela";
-    src: url("/assets/fonts/Canela-Regular.woff2") format("woff2"),
-         url("/assets/fonts/Canela-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: "Canela Light";
-    src: url("/assets/fonts/Canela-Light.woff2") format("woff2"),
-         url("/assets/fonts/Canela-Light.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: "Canela Light Italic";
-    src: url("/assets/fonts/Canela-LightItalic.woff2") format("woff2"),
-         url("/assets/fonts/Canela-LightItalic.woff") format("woff");
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: "Canela Regular";
-    src: url("/assets/fonts/Canela-Regular.woff2") format("woff2"),
-         url("/assets/fonts/Canela-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: "Akzidenz-Grotesk BQ";
+  src: url("/fonts/AkzidenzGroteskBQ.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("/fonts/Canela-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela Light";
+  src: url("/fonts/Canela-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela Light Italic";
+  src: url("/fonts/Canela-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Canela Regular";
+  src: url("/fonts/Canela-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: var(--font-sans), sans-serif;
   font-size: var(--font-base);
