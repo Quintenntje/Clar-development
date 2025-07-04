@@ -2,6 +2,8 @@
 
 A modern, interactive website for CLAR communication agency featuring advanced GSAP animations and responsive design.
 
+NOTE: This is a redesign of clar.dev for a school project
+
 ## 🎯 Features
 
 - **Advanced GSAP Animations**
